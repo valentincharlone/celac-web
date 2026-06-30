@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  /* CELAC Brand Colors — Opción A (evolución del actual) */
+  --color-celac-navy: #0f2044;
+  --color-celac-green: #1b8a4e;
+  --color-celac-sky: #1e9fd4;
+  --color-celac-amber: #e8a838;
+  --color-celac-gray: #f5f7fa;
+
+  /* Typography */
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-plus-jakarta);
+
+  /* Pillar colors */
+  --color-pillar-green: #1b8a4e;
+  --color-pillar-sky: #1e9fd4;
+  --color-pillar-navy: #0f2044;
+  --color-pillar-amber: #e8a838;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #1e2533;
+  font-family: var(--font-sans);
+}
+
+/* Utility: clip-path diagonal para secciones hero */
+.clip-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+}
+.max-w-8xl {
+  max-width: 90rem;
+}

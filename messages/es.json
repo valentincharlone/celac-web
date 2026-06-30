@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "whatIsCelac": "¿Qué es CELAC?",
+    "countries": "Países Miembros",
+    "news": "Noticias",
+    "events": "Eventos",
+    "repository": "Repositorio",
+    "contact": "Contacto"
+  },
+  "home": {
+    "heroTitle": "Construimos juntos una región más integrada, solidaria y sostenible",
+    "heroSubtitle": "La Comunidad de Estados Latinoamericanos y Caribeños reúne a 33 naciones en un espacio de diálogo, cooperación y desarrollo.",
+    "heroCta": "Conocé la CELAC",
+    "statsCountries": "Países Miembros",
+    "statsSummits": "Cumbres de Jefes de Estado",
+    "statsAreas": "Áreas de Cooperación",
+    "statsCitizens": "Millones de Ciudadanos",
+    "pillarsTitle": "Nuestros Pilares",
+    "pillar1": "Diálogo Político",
+    "pillar2": "Integración Regional",
+    "pillar3": "Desarrollo Sostenible",
+    "pillar4": "Paz y Seguridad",
+    "newsTitle": "Noticias Recientes",
+    "eventsTitle": "Próximos Eventos",
+    "ctaBanner": "Construimos juntos una región más integrada, solidaria y sostenible.",
+    "ctaButton": "Conocé más"
+  },
+  "footer": {
+    "rights": "© 2026 CELAC. Todos los derechos reservados.",
+    "email": "info@celac.cloud",
+    "address": "Tegucigalpa, Honduras"
+  }
+}

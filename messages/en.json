@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "home": "Home",
+    "whatIsCelac": "What is CELAC?",
+    "countries": "Member States",
+    "news": "News",
+    "events": "Events",
+    "repository": "Repository",
+    "contact": "Contact"
+  },
+  "home": {
+    "heroTitle": "Building together a more integrated, supportive and sustainable region",
+    "heroSubtitle": "The Community of Latin American and Caribbean States brings together 33 nations in a space for dialogue, cooperation and development.",
+    "heroCta": "Learn about CELAC",
+    "statsCountries": "Member States",
+    "statsSummits": "Heads of State Summits",
+    "statsAreas": "Areas of Cooperation",
+    "statsCitizens": "Million Citizens",
+    "pillarsTitle": "Our Pillars",
+    "pillar1": "Political Dialogue",
+    "pillar2": "Regional Integration",
+    "pillar3": "Sustainable Development",
+    "pillar4": "Peace and Security",
+    "newsTitle": "Recent News",
+    "eventsTitle": "Upcoming Events",
+    "ctaBanner": "Building together a more integrated, supportive and sustainable region.",
+    "ctaButton": "Learn more"
+  },
+  "footer": {
+    "rights": "© 2026 CELAC. All rights reserved.",
+    "email": "info@celac.cloud",
+    "address": "Tegucigalpa, Honduras"
+  }
+}
