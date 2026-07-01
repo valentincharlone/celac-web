@@ -88,9 +88,9 @@ export default function HeroSection() {
       ))}
 
       {/* Overlay: oscuro izquierda → semitransparente derecha */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#060e1c] via-[#060e1c]/80 to-[#060e1c]/35 z-10" />
+      <div className="absolute inset-0 bg-linear-to-r from-[#060e1c] via-[#060e1c]/80 to-[#060e1c]/35 z-10" />
       {/* Franja oscura en la parte inferior */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#060e1c] to-transparent z-10" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-[#060e1c] to-transparent z-10" />
 
       {/* ── Contenido ── */}
       <div className="relative z-20 w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 ">
@@ -98,7 +98,7 @@ export default function HeroSection() {
           {/* ── Columna izquierda: texto animado ── */}
           <div className="flex flex-col justify-center">
             {/* min-h fijo para que el crossfade no cause saltos de layout */}
-            <div className="relative min-h-[360px] mb-8">
+            <div className="relative min-h-90 mb-8">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current}
@@ -120,7 +120,7 @@ export default function HeroSection() {
                   </h1>
 
                   {/* Subtítulo */}
-                  <p className="text-white/65 text-base sm:text-lg leading-relaxed max-w-[480px]">
+                  <p className="text-white/65 text-base sm:text-lg leading-relaxed max-w-120">
                     {slide.subtitle}
                   </p>
                 </motion.div>
@@ -138,12 +138,11 @@ export default function HeroSection() {
               </Link>
               <Link
                 href={`/${locale}/noticias`}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl border border-white/20 bg-white/[0.06] hover:bg-white/[0.12] active:scale-[0.98] transition-all backdrop-blur-sm"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl border border-white/20 bg-white/6 hover:bg-white/12 active:scale-[0.98] transition-all backdrop-blur-sm"
               >
                 Ver noticias
               </Link>
             </div>
-
           </div>
 
           {/* ── Columna derecha: logo flotante ── */}
@@ -152,7 +151,7 @@ export default function HeroSection() {
             <motion.div
               animate={{ scale: [1, 1.06, 1], opacity: [0.25, 0.45, 0.25] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute w-[360px] h-[360px] rounded-full border border-celac-green/35"
+              className="absolute w-90 h-90 rounded-full border border-celac-green/35"
             />
             <motion.div
               animate={{ scale: [1, 1.08, 1], opacity: [0.12, 0.22, 0.12] }}
@@ -162,13 +161,11 @@ export default function HeroSection() {
                 ease: "easeInOut",
                 delay: 1.2,
               }}
-              className="absolute w-[460px] h-[460px] rounded-full border border-white/15"
+              className="absolute w-115 h-115 rounded-full border border-white/15"
             />
 
             {/* Halo */}
-            <div className="absolute w-[320px] h-[320px] rounded-full bg-celac-green/[0.08] blur-[70px]" />
-            
-
+            <div className="absolute w-80 h-80 rounded-full bg-celac-green/8 blur-[70px]" />
           </div>
         </div>
       </div>
