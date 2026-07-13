@@ -2,8 +2,11 @@ import { useTranslations } from "next-intl";
 import HeroSection from "@/components/home/HeroSection";
 import AboutSection from "@/components/home/AboutSection";
 import MissionSection from "@/components/home/MissionSection";
-import StatsSection from "@/components/home/StatsSection";
+import WhatWeDoSection from "@/components/home/WhatWeDoSection";
 import ActionLinesSection from "@/components/home/ActionLinesSection";
+import NewsSection from "@/components/home/NewsSection";
+import EventsSection from "@/components/home/EventsSection";
+import FaqSection from "@/components/home/FaqSection";
 import CtaBanner from "@/components/home/CtaBanner";
 
 export default function HomePage() {
@@ -12,8 +15,11 @@ export default function HomePage() {
       <HeroSection />
       <AboutSection />
       <MissionSection />
-      <StatsSection />
+      <WhatWeDoSection />
       <ActionLinesSection />
+      <NewsSection />
+      <EventsSection />
+      <FaqSection />
       <CtaBanner />
     </>
   );

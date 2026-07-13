@@ -1,74 +1,92 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { motion, type Variants } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 
-const HIGHLIGHT_COLORS = [
-  "text-pillar-green",
-  "text-pillar-sky",
-  "text-pillar-amber",
+const STATS = [
+  { valueKey: "statsCountries", number: 33, suffix: "", text: "text-pillar-green" },
+  { valueKey: "statsSummits", number: 8, suffix: "", text: "text-pillar-sky" },
+  { valueKey: "statsAreas", number: 18, suffix: "", text: "text-pillar-navy" },
+  { valueKey: "statsCitizens", number: 620, suffix: "M", text: "text-pillar-amber" },
 ] as const;
 
-const container: Variants = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
-  },
-};
+function AnimatedCounter({ target, suffix }: { target: number; suffix: string }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true });
 
-const item: Variants = {
-  hidden: { y: "110%" },
-  show: {
-    y: "0%",
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
-  },
-};
+  useEffect(() => {
+    if (!inView) return;
+    let start = 0;
+    const duration = 1500;
+    const step = Math.ceil(target / (duration / 16));
+    const timer = setInterval(() => {
+      start += step;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(start);
+      }
+    }, 16);
+    return () => clearInterval(timer);
+  }, [inView, target]);
+
+  return (
+    <span ref={ref}>
+      {count}
+      {suffix}
+    </span>
+  );
+}
 
 export default function MissionSection() {
   const t = useTranslations("home");
 
-  const highlight = (className: string) => {
-    const Highlight = (chunks: React.ReactNode) => (
-      <span className="inline-block overflow-hidden align-bottom pb-1 -mb-1">
-        <motion.span variants={item} className={`inline-block ${className}`}>
-          {chunks}
-        </motion.span>
-      </span>
-    );
-
-    return Object.assign(Highlight, {
-      displayName: `Highlight(${className})`,
-    });
-  };
-
   return (
     <section className="py-20 md:py-28 bg-celac-gray">
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
-      >
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <span className="text-gray-500 text-sm sm:text-base">
-            {t("missionTitle")}
-          </span>
-        </div>
-        <motion.p
-          initial="hidden"
-          whileInView="show"
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          variants={container}
-          className="font-heading text-3xl sm:text-4xl md:text-6xl font-bold text-celac-navy leading-tight"
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl mx-auto mb-16 text-center"
         >
-          {t.rich("missionSubtitle", {
-            hl1: highlight(HIGHLIGHT_COLORS[0]),
-            hl2: highlight(HIGHLIGHT_COLORS[1]),
-            hl3: highlight(HIGHLIGHT_COLORS[2]),
-          })}
-        </motion.p>
-      </motion.div>
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <span className="text-gray-400 uppercase tracking-wide text-sm font-medium">
+              {t("missionTitle")}
+            </span>
+            <span className="h-px w-10 bg-pillar-green" />
+          </div>
+          <p className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-celac-navy leading-tight">
+            {t("missionSubtitle")}
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 lg:divide-x divide-gray-300/70">
+          {STATS.map(({ valueKey, number, suffix, text }, i) => (
+            <motion.div
+              key={valueKey}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, duration: 0.4 }}
+              className="px-4 py-6 lg:py-2 text-center"
+            >
+              <p
+                className={`font-heading text-4xl sm:text-5xl font-bold mb-2 ${text}`}
+              >
+                <AnimatedCounter target={number} suffix={suffix} />
+              </p>
+              <p className="text-gray-500 text-xs sm:text-sm font-medium uppercase tracking-wide">
+                {t(valueKey)}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }
