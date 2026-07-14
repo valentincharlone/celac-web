@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import HeroSection from "@/components/home/HeroSection";
 import AboutSection from "@/components/home/AboutSection";
 import MissionSection from "@/components/home/MissionSection";
@@ -16,9 +15,9 @@ export default function HomePage() {
       <AboutSection />
       <MissionSection />
       <WhatWeDoSection />
-      <ActionLinesSection />
       <NewsSection />
-      <EventsSection />
+      <ActionLinesSection />
+      {/* <EventsSection /> */}
       <FaqSection />
       <CtaBanner />
     </>

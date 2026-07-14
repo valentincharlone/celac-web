@@ -23,15 +23,14 @@ export default function Footer() {
               />
             </div>
             <p className="text-white/60 text-sm leading-relaxed">
-              El mayor espacio de integración política, económica y cultural de
-              América Latina y el Caribe.
+              {t("footer.brandDesc")}
             </p>
           </div>
 
           {/* Links */}
           <div>
             <h3 className="font-heading font-semibold text-sm mb-4 text-celac-sky">
-              Navegación
+              {t("footer.navTitle")}
             </h3>
             <ul className="space-y-2">
               {[
@@ -57,7 +56,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="font-heading font-semibold text-sm mb-4 text-celac-sky">
-              Contacto
+              {t("footer.contactTitle")}
             </h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-white/60 text-sm">

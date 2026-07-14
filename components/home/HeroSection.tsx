@@ -12,28 +12,10 @@ import {
 } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 
-const SLIDES = [
-  {
-    id: 0,
-    image: "/images/hero-map.png",
-    title: "Unidos por el Diálogo y la Integración Regional",
-    subtitle:
-      "La Comunidad de Estados Latinoamericanos y Caribeños reúne a 33 naciones en un espacio de diálogo, cooperación y desarrollo.",
-  },
-  {
-    id: 1,
-    image: "/images/hero-slider1.png",
-    title: "América Latina y el Caribe: una sola voz para el desarrollo común",
-    subtitle:
-      "33 Estados soberanos que trabajan juntos para hacer escuchar la voz de nuestra región en el mundo.",
-  },
-  {
-    id: 2,
-    image: "/images/hero-slider3.png",
-    title: "Integración, cooperación y soberanía para nuestra región",
-    subtitle:
-      "Construimos acuerdos y alianzas que fortalecen la autonomía y el bienestar de los pueblos latinoamericanos y caribeños.",
-  },
+const SLIDE_IMAGES = [
+  "/images/hero-map.png",
+  "/images/hero-slider1.png",
+  "/images/hero-slider3.png",
 ] as const;
 
 const INTERVAL = 4000;
@@ -43,6 +25,13 @@ export default function HeroSection() {
   const locale = useLocale();
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+
+  const SLIDES = SLIDE_IMAGES.map((image, i) => ({
+    id: i,
+    image,
+    title: t(`heroSlide${i + 1}Title` as "heroSlide1Title"),
+    subtitle: t(`heroSlide${i + 1}Subtitle` as "heroSlide1Subtitle"),
+  }));
 
   const next = useCallback(
     () => setCurrent((c) => (c + 1) % SLIDES.length),
@@ -111,7 +100,7 @@ export default function HeroSection() {
                   {/* Badge */}
                   <span className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-celac-green/40 bg-celac-green/10 text-celac-green text-xs font-semibold tracking-widest uppercase backdrop-blur-sm">
                     <span className="w-1.5 h-1.5 rounded-full bg-celac-green animate-pulse" />
-                    33 Países · 620 Millones de Ciudadanos
+                    {t("heroBadge")}
                   </span>
 
                   {/* Título */}
@@ -140,7 +129,7 @@ export default function HeroSection() {
                 href={`/${locale}/noticias`}
                 className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl border border-white/20 bg-white/6 hover:bg-white/12 active:scale-[0.98] transition-all backdrop-blur-sm"
               >
-                Ver noticias
+                {t("heroNewsCta")}
               </Link>
             </div>
           </div>
