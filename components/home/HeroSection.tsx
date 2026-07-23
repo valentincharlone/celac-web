@@ -18,7 +18,7 @@ const SLIDE_IMAGES = [
   "/images/hero-slider3.png",
 ] as const;
 
-const INTERVAL = 4000;
+const INTERVAL = 4500;
 
 export default function HeroSection() {
   const t = useTranslations("home");
