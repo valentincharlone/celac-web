@@ -8,10 +8,10 @@ import { Menu, X, Globe } from "lucide-react";
 
 const NAV_LINKS = [
   { key: "whatIsCelac", href: "/que-es-celac" },
-  { key: "countries",   href: "/paises-miembros" },
-  { key: "news",        href: "/noticias" },
-  { key: "repository",  href: "/repositorio" },
-  { key: "contact",     href: "/contacto" },
+  { key: "countries", href: "/paises-miembros" },
+  { key: "news", href: "/noticias" },
+  { key: "repository", href: "/repositorio" },
+  { key: "contact", href: "/contacto" },
 ] as const;
 
 const LOCALES = [
@@ -24,8 +24,8 @@ export default function Header() {
   const t = useTranslations("nav");
   const locale = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [langOpen, setLangOpen]     = useState(false);
-  const [scrolled, setScrolled]     = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -44,7 +44,6 @@ export default function Header() {
     >
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
         <div className="flex items-center justify-between h-16">
-
           {/* Logo */}
           <Link href={`/${locale}`} className="flex items-center shrink-0">
             <Image

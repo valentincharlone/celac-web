@@ -3,12 +3,33 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { MessageSquare, Globe2, Leaf, Shield } from "lucide-react";
+import SectionEyebrow from "@/components/ui/SectionEyebrow";
 
 const PILLARS = [
-  { key: "pillar1", icon: MessageSquare, tint: "bg-pillar-green/10", text: "text-pillar-green" },
-  { key: "pillar2", icon: Globe2, tint: "bg-pillar-sky/10", text: "text-pillar-sky" },
-  { key: "pillar3", icon: Leaf, tint: "bg-pillar-navy/10", text: "text-pillar-navy" },
-  { key: "pillar4", icon: Shield, tint: "bg-pillar-amber/10", text: "text-pillar-amber" },
+  {
+    key: "pillar1",
+    icon: MessageSquare,
+    tint: "bg-pillar-green/10",
+    text: "text-pillar-green",
+  },
+  {
+    key: "pillar2",
+    icon: Globe2,
+    tint: "bg-pillar-sky/10",
+    text: "text-pillar-sky",
+  },
+  {
+    key: "pillar3",
+    icon: Leaf,
+    tint: "bg-pillar-navy/10",
+    text: "text-pillar-navy",
+  },
+  {
+    key: "pillar4",
+    icon: Shield,
+    tint: "bg-pillar-amber/10",
+    text: "text-pillar-amber",
+  },
 ] as const;
 
 export default function AboutSection() {
@@ -23,12 +44,7 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-gray-400 uppercase tracking-wide text-sm font-medium">
-              {t("aboutTitle")}
-            </span>
-            <span className="h-px flex-1 max-w-16 bg-gray-300" />
-          </div>
+          <SectionEyebrow>{t("aboutTitle")}</SectionEyebrow>
           <h2 className="font-heading text-4xl sm:text-6xl font-bold text-celac-navy mb-6 leading-16">
             {t("aboutLead")}
           </h2>

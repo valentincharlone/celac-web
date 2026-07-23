@@ -3,6 +3,64 @@ import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Mail, MapPin } from "lucide-react";
 
+/* lucide-react ya no incluye logos de marca (Facebook/Instagram/X) —
+   se recrean acá como trazos simples en el mismo estilo del resto de íconos. */
+function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M17 2h-3a5 5 0 0 0-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+    </svg>
+  );
+}
+
+function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <circle cx="12" cy="12" r="3.8" />
+      <circle cx="17.4" cy="6.6" r="0.6" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function XIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.75}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      {...props}
+    >
+      <path d="M4 4l16 16M20 4L4 20" />
+    </svg>
+  );
+}
+
+const SOCIALS = [
+  { label: "Facebook", Icon: FacebookIcon, href: "#" },
+  { label: "X (Twitter)", Icon: XIcon, href: "#" },
+  { label: "Instagram", Icon: InstagramIcon, href: "#" },
+] as const;
+
 export default function Footer() {
   const t = useTranslations();
   const locale = useLocale();
@@ -29,7 +87,7 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h3 className="font-heading font-semibold text-sm mb-4 text-celac-sky">
+            <h3 className="font-heading font-semibold text-sm mb-4 text-white">
               {t("footer.navTitle")}
             </h3>
             <ul className="space-y-2">
@@ -55,7 +113,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-heading font-semibold text-sm mb-4 text-celac-sky">
+            <h3 className="font-heading font-semibold text-sm mb-4 text-white">
               {t("footer.contactTitle")}
             </h3>
             <ul className="space-y-3">
@@ -74,14 +132,14 @@ export default function Footer() {
               </li>
             </ul>
             <div className="flex gap-3 mt-6">
-              {["Facebook", "Twitter/X", "Instagram"].map((label) => (
+              {SOCIALS.map(({ label, Icon, href }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
                   aria-label={label}
-                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-celac-green flex items-center justify-center transition-colors text-xs font-bold"
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-celac-green flex items-center justify-center transition-colors"
                 >
-                  {label[0]}
+                  <Icon width={14} height={14} />
                 </a>
               ))}
             </div>

@@ -6,9 +6,24 @@ import { motion } from "framer-motion";
 import { MapPin, ArrowRight } from "lucide-react";
 
 const EVENTS = [
-  { dayKey: "event1Day", monthKey: "event1Month", titleKey: "event1Title", locationKey: "event1Location" },
-  { dayKey: "event2Day", monthKey: "event2Month", titleKey: "event2Title", locationKey: "event2Location" },
-  { dayKey: "event3Day", monthKey: "event3Month", titleKey: "event3Title", locationKey: "event3Location" },
+  {
+    dayKey: "event1Day",
+    monthKey: "event1Month",
+    titleKey: "event1Title",
+    locationKey: "event1Location",
+  },
+  {
+    dayKey: "event2Day",
+    monthKey: "event2Month",
+    titleKey: "event2Title",
+    locationKey: "event2Location",
+  },
+  {
+    dayKey: "event3Day",
+    monthKey: "event3Month",
+    titleKey: "event3Title",
+    locationKey: "event3Location",
+  },
 ] as const;
 
 export default function EventsSection() {
@@ -17,7 +32,7 @@ export default function EventsSection() {
 
   return (
     <section className="py-20 md:py-28 bg-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-celac-navy mb-4 leading-tight">
             {t("eventsTitle")}

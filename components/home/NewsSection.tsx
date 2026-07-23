@@ -60,28 +60,27 @@ export default function NewsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="group relative rounded-2xl overflow-hidden h-80 lg:h-full min-h-96"
+            className="group rounded-2xl overflow-hidden bg-white border border-gray-100 flex flex-col"
           >
-            <Image
-              src={featured.image}
-              alt=""
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-[#060e1c] via-[#060e1c]/50 to-transparent" />
-            <div className="relative z-10 h-full flex flex-col justify-end p-8">
-              <div className="flex items-center gap-3 mb-3">
-                <span className="px-2.5 py-1 rounded-full bg-pillar-green text-white text-xs font-semibold uppercase tracking-wide">
-                  {t(featured.tagKey)}
-                </span>
-                <span className="text-white/60 text-xs">
-                  {t(featured.dateKey)}
-                </span>
-              </div>
-              <h3 className="font-heading text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">
+            <div className="relative h-64 lg:h-72 overflow-hidden shrink-0">
+              <Image
+                src={featured.image}
+                alt=""
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-celac-green text-white text-xs font-semibold uppercase tracking-wide">
+                {t(featured.tagKey)}
+              </span>
+            </div>
+            <div className="p-6">
+              <span className="text-gray-400 text-xs">
+                {t(featured.dateKey)}
+              </span>
+              <h3 className="font-heading text-xl sm:text-2xl font-bold text-celac-navy mt-1 mb-2 leading-snug">
                 {t(featured.titleKey)}
               </h3>
-              <p className="text-white/70 text-sm leading-relaxed max-w-md">
+              <p className="text-gray-500 text-sm leading-relaxed">
                 {t(featured.excerptKey)}
               </p>
             </div>

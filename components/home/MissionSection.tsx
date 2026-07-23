@@ -3,15 +3,22 @@
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import SectionEyebrow from "@/components/ui/SectionEyebrow";
 
 const STATS = [
-  { valueKey: "statsCountries", number: 33, suffix: "", text: "text-pillar-green" },
-  { valueKey: "statsSummits", number: 8, suffix: "", text: "text-pillar-sky" },
-  { valueKey: "statsAreas", number: 18, suffix: "", text: "text-pillar-navy" },
-  { valueKey: "statsCitizens", number: 620, suffix: "M", text: "text-pillar-amber" },
+  { valueKey: "statsCountries", number: 33, suffix: "" },
+  { valueKey: "statsSummits", number: 8, suffix: "" },
+  { valueKey: "statsAreas", number: 18, suffix: "" },
+  { valueKey: "statsCitizens", number: 620, suffix: "M" },
 ] as const;
 
-function AnimatedCounter({ target, suffix }: { target: number; suffix: string }) {
+function AnimatedCounter({
+  target,
+  suffix,
+}: {
+  target: number;
+  suffix: string;
+}) {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true });
@@ -45,8 +52,8 @@ export default function MissionSection() {
   const t = useTranslations("home");
 
   return (
-    <section className="py-20 md:py-28 bg-celac-gray">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 md:py-28 bg-celac-navy-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,35 +61,30 @@ export default function MissionSection() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto mb-16 text-center"
         >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <span className="text-gray-400 uppercase tracking-wide text-sm font-medium">
-              {t("missionTitle")}
-            </span>
-            <span className="h-px w-10 bg-pillar-green" />
-          </div>
-          <p className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-celac-navy leading-tight">
+          <SectionEyebrow align="center" tone="dark">
+            {t("missionTitle")}
+          </SectionEyebrow>
+          <p className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
             {t("missionSubtitle")}
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 lg:divide-x divide-gray-300/70">
-          {STATS.map(({ valueKey, number, suffix, text }, i) => (
+        <div className="flex flex-wrap items-baseline justify-center gap-y-6">
+          {STATS.map(({ valueKey, number, suffix }, i) => (
             <motion.div
               key={valueKey}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.4 }}
-              className="px-4 py-6 lg:py-2 text-center"
+              className="flex items-baseline gap-2 px-3 sm:px-5 border-l border-white/15 first:border-0 first:pl-0 last:pr-0"
             >
-              <p
-                className={`font-heading text-4xl sm:text-5xl font-bold mb-2 ${text}`}
-              >
+              <span className="font-heading text-2xl sm:text-3xl font-bold text-celac-green">
                 <AnimatedCounter target={number} suffix={suffix} />
-              </p>
-              <p className="text-gray-500 text-xs sm:text-sm font-medium uppercase tracking-wide">
+              </span>
+              <span className="text-white/50 text-xs sm:text-sm font-medium uppercase tracking-wide">
                 {t(valueKey)}
-              </p>
+              </span>
             </motion.div>
           ))}
         </div>

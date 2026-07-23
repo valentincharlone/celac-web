@@ -19,7 +19,7 @@ export default function FaqSection() {
 
   return (
     <section className="py-20 md:py-28 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* ── Columna izquierda: intro + contacto ── */}
           <motion.div
@@ -29,9 +29,6 @@ export default function FaqSection() {
             transition={{ duration: 0.5 }}
             className="lg:sticky lg:top-28 self-start"
           >
-            <span className="inline-flex items-center px-3 py-1 rounded-full bg-pillar-sky/10 text-pillar-sky uppercase tracking-wide text-xs font-semibold mb-5">
-              {t("faqTitle")}
-            </span>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-celac-navy mb-6 leading-tight">
               {t("faqLead")}
             </h2>

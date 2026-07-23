@@ -52,7 +52,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#060e1c]"
+      className="relative min-h-screen flex items-center overflow-hidden bg-celac-navy"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -77,9 +77,9 @@ export default function HeroSection() {
       ))}
 
       {/* Overlay: oscuro izquierda → semitransparente derecha */}
-      <div className="absolute inset-0 bg-linear-to-r from-[#060e1c] via-[#060e1c]/80 to-[#060e1c]/35 z-10" />
+      <div className="absolute inset-0 bg-linear-to-r from-celac-navy via-celac-navy/80 to-celac-navy/35 z-10" />
       {/* Franja oscura en la parte inferior */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-[#060e1c] to-transparent z-10" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-celac-navy to-transparent z-10" />
 
       {/* ── Contenido ── */}
       <div className="relative z-20 w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 ">
@@ -120,7 +120,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <Link
                 href={`/${locale}/que-es-celac`}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-xl hover:bg-celac-green/90 active:scale-[0.98] transition-all shadow-[0_0_28px_rgba(27,138,78,0.4)]"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-xl hover:bg-celac-green-hover active:scale-[0.98] transition-all shadow-[0_0_28px_rgba(15,122,77,0.4)]"
               >
                 {t("heroCta")}
                 <ArrowRight size={16} />

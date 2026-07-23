@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  /* CELAC Brand Colors — Opción A (evolución del actual) */
-  --color-celac-navy: #0f2044;
-  --color-celac-green: #1b8a4e;
+  /* CELAC Brand Colors — Opción B (refresh Fraunces/Inter) */
+  --color-celac-navy: #071627;
+  --color-celac-navy-2: #0d1b2f;
+  --color-celac-green: #0f7a4d;
+  --color-celac-green-hover: #0b5c3a;
   --color-celac-sky: #1e9fd4;
   --color-celac-amber: #e8a838;
   --color-celac-gray: #f5f7fa;
 
   /* Typography */
   --font-sans: var(--font-inter);
-  --font-heading: var(--font-plus-jakarta);
+  --font-heading: var(--font-fraunces);
 
   /* Pillar colors */
-  --color-pillar-green: #1b8a4e;
+  --color-pillar-green: #0f7a4d;
   --color-pillar-sky: #1e9fd4;
-  --color-pillar-navy: #0f2044;
+  --color-pillar-navy: #071627;
   --color-pillar-amber: #e8a838;
 }
 
@@ -33,6 +35,7 @@ body {
 .clip-diagonal {
   clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
 }
+
 .max-w-8xl {
   max-width: 90rem;
 }
