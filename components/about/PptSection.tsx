@@ -19,17 +19,17 @@ import {
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 
 const PPT = [
-  { key: "ppt1", Flag: CL, years: "2012" },
-  { key: "ppt2", Flag: CU, years: "2013" },
-  { key: "ppt3", Flag: CR, years: "2014" },
-  { key: "ppt4", Flag: EC, years: "2015" },
-  { key: "ppt5", Flag: DO, years: "2016" },
-  { key: "ppt6", Flag: SV, years: "2017–2018" },
-  { key: "ppt7", Flag: BO, years: "2019" },
-  { key: "ppt8", Flag: MX, years: "2020–2021" },
-  { key: "ppt9", Flag: AR, years: "2022" },
-  { key: "ppt10", Flag: VC, years: "2023" },
-  { key: "ppt11", Flag: HN, years: "2024" },
+  { key: "ppt1", Flag: CL, years: "2012", current: false },
+  { key: "ppt2", Flag: CU, years: "2013", current: false },
+  { key: "ppt3", Flag: CR, years: "2014", current: false },
+  { key: "ppt4", Flag: EC, years: "2015", current: false },
+  { key: "ppt5", Flag: DO, years: "2016", current: false },
+  { key: "ppt6", Flag: SV, years: "2017–2018", current: false },
+  { key: "ppt7", Flag: BO, years: "2019", current: false },
+  { key: "ppt8", Flag: MX, years: "2020–2021", current: false },
+  { key: "ppt9", Flag: AR, years: "2022", current: false },
+  { key: "ppt10", Flag: VC, years: "2023", current: false },
+  { key: "ppt11", Flag: HN, years: "2024", current: false },
   { key: "ppt12", Flag: CO, years: "2025", current: true },
 ] as const;
 
