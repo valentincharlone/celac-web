@@ -35,11 +35,11 @@ export default function HeroSection() {
 
   const next = useCallback(
     () => setCurrent((c) => (c + 1) % SLIDES.length),
-    [],
+    [SLIDES.length],
   );
   const prev = useCallback(
     () => setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length),
-    [],
+    [SLIDES.length],
   );
 
   useEffect(() => {
@@ -98,8 +98,7 @@ export default function HeroSection() {
                   transition={{ duration: 0.35, ease: "easeInOut" }}
                 >
                   {/* Badge */}
-                  <span className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full border border-celac-green/40 bg-celac-green/10 text-celac-green text-xs font-semibold tracking-widest uppercase backdrop-blur-sm">
-                    <span className="w-1.5 h-1.5 rounded-full bg-celac-green animate-pulse" />
+                  <span className="inline-flex items-center mb-6 px-4 py-1.5 rounded-full border border-celac-green/40 bg-celac-green/10 text-celac-green text-xs font-semibold tracking-widest uppercase backdrop-blur-sm">
                     {t("heroBadge")}
                   </span>
 
@@ -120,42 +119,24 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <Link
                 href={`/${locale}/que-es-celac`}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-xl hover:bg-celac-green-hover active:scale-[0.98] transition-all shadow-[0_0_28px_rgba(15,122,77,0.4)]"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-lg hover:bg-celac-green-hover active:scale-[0.98] transition-all"
               >
                 {t("heroCta")}
                 <ArrowRight size={16} />
               </Link>
               <Link
                 href={`/${locale}/noticias`}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-white font-semibold rounded-xl border border-white/20 bg-white/6 hover:bg-white/12 active:scale-[0.98] transition-all backdrop-blur-sm"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-white font-semibold rounded-lg border border-white/20 bg-white/6 hover:bg-white/12 active:scale-[0.98] transition-all backdrop-blur-sm"
               >
                 {t("heroNewsCta")}
               </Link>
             </div>
           </div>
 
-          {/* ── Columna derecha: logo flotante ── */}
-          <div className="hidden lg:flex items-center justify-center relative">
-            {/* Anillos */}
-            <motion.div
-              animate={{ scale: [1, 1.06, 1], opacity: [0.25, 0.45, 0.25] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute w-90 h-90 rounded-full border border-celac-green/35"
-            />
-            <motion.div
-              animate={{ scale: [1, 1.08, 1], opacity: [0.12, 0.22, 0.12] }}
-              transition={{
-                duration: 7,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1.2,
-              }}
-              className="absolute w-115 h-115 rounded-full border border-white/15"
-            />
-
-            {/* Halo */}
-            <div className="absolute w-80 h-80 rounded-full bg-celac-green/8 blur-[70px]" />
-          </div>
+          {/* ── Columna derecha: marca de los 33 Estados Miembros ── */}
+          {/* <div className="hidden lg:flex items-center justify-center relative">
+            <MemberStatesMark />
+          </div> */}
         </div>
       </div>
 

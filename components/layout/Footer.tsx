@@ -76,8 +76,8 @@ export default function Footer() {
                 src="/images/logo-celac-white.png"
                 alt="CELAC"
                 width={140}
-                height={42}
-                className="h-10 w-auto object-contain"
+                height={0}
+                className="w-auto object-contain"
               />
             </div>
             <p className="text-white/60 text-sm leading-relaxed">

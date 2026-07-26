@@ -77,9 +77,6 @@ export default function FaqSection() {
                     onClick={() => setOpen(isOpen ? null : i)}
                     className="w-full flex items-start gap-4 px-4 py-6 text-left"
                   >
-                    <span className="font-heading text-sm font-bold text-pillar-green shrink-0 pt-0.5">
-                      0{i + 1}
-                    </span>
                     <span
                       className={`flex-1 font-heading font-semibold text-base sm:text-lg ${
                         isOpen ? "text-celac-navy" : "text-gray-700"
@@ -103,7 +100,7 @@ export default function FaqSection() {
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="overflow-hidden"
                       >
-                        <p className="text-gray-500 leading-relaxed pb-6 pl-10 pr-8">
+                        <p className="text-gray-500 leading-relaxed pb-6 pl-4 pr-8">
                           {t(a)}
                         </p>
                       </motion.div>

@@ -39,9 +39,6 @@ export default function ActionLinesSection() {
               transition={{ delay: i * 0.1, duration: 0.4 }}
               className="relative rounded-2xl border border-gray-200 p-6 overflow-hidden"
             >
-              <span className="absolute top-4 right-5 font-heading text-4xl font-bold text-gray-100 select-none">
-                0{i + 1}
-              </span>
               <div className="relative w-11 h-11 rounded-lg bg-celac-green flex items-center justify-center mb-5">
                 <Icon size={20} className="text-white" strokeWidth={1.75} />
               </div>
