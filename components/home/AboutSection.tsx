@@ -62,7 +62,7 @@ export default function AboutSection() {
               className="flex items-start gap-4 py-5 border-b border-gray-100 first:pt-0 last:border-0 last:pb-0"
             >
               <div
-                className={`shrink-0 w-10 h-10 rounded-lg ${tint} flex items-center justify-center`}
+                className={`shrink-0 w-10 h-10 rounded-md ${tint} flex items-center justify-center`}
               >
                 <Icon size={18} className={text} strokeWidth={1.75} />
               </div>

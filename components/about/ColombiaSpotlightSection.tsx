@@ -18,9 +18,9 @@ export default function ColombiaSpotlightSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-3xl border border-celac-amber/30 bg-celac-amber/5 p-8 sm:p-12"
+          className="rounded-md border border-celac-amber/30 bg-celac-amber/5 p-8 sm:p-12"
         >
-          <span className="inline-flex items-center mb-5 px-4 py-1.5 rounded-full border border-celac-amber/40 bg-celac-amber/10 text-celac-amber text-xs font-semibold tracking-widest uppercase">
+          <span className="inline-flex items-center mb-5 px-4 py-1.5 rounded-md border border-celac-amber/40 bg-celac-amber/10 text-celac-amber text-xs font-semibold tracking-widest uppercase">
             {t("spotlightEyebrow")}
           </span>
           <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-celac-navy mb-4 leading-tight">
@@ -37,7 +37,7 @@ export default function ColombiaSpotlightSection() {
             {topics.map((topic) => (
               <span
                 key={topic}
-                className="px-3 py-1.5 rounded-full bg-white border border-celac-amber/30 text-celac-navy text-sm"
+                className="px-3 py-1.5 rounded-md bg-white border border-celac-amber/30 text-celac-navy text-sm"
               >
                 {topic}
               </span>

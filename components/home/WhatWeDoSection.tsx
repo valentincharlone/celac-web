@@ -68,7 +68,7 @@ export default function WhatWeDoSection() {
         >
           <span className="absolute right-0 top-6 bottom-18 w-1.5 rounded-full bg-pillar-amber" />
 
-          <div className="relative h-72 sm:h-88 mr-6 rounded-2xl overflow-hidden shadow-xl">
+          <div className="relative h-72 sm:h-88 mr-6 rounded-md overflow-hidden shadow-xl">
             <Image
               src="/images/lqh-grupal.jpg"
               alt="Delegados de la CELAC en la Reunión Ministerial de Energía, Montevideo"
@@ -77,7 +77,7 @@ export default function WhatWeDoSection() {
             />
           </div>
 
-          <div className="absolute bottom-0 left-0 w-3/5 h-36 sm:h-44 rounded-2xl overflow-hidden shadow-xl ring-4 ring-celac-gray">
+          <div className="absolute bottom-0 left-0 w-3/5 h-36 sm:h-44 rounded-md overflow-hidden shadow-xl ring-4 ring-celac-gray">
             <Image
               src="/images/lqh-banderas.jpg"
               alt="Banderas de los Estados miembros de la CELAC"

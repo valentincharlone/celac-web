@@ -60,7 +60,7 @@ export default function NewsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="group rounded-2xl overflow-hidden bg-white border border-gray-100 flex flex-col"
+            className="group rounded-md overflow-hidden bg-white border border-gray-100 flex flex-col"
           >
             <div className="relative h-64 lg:h-72 overflow-hidden shrink-0">
               <Image
@@ -69,7 +69,7 @@ export default function NewsSection() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <span className="absolute top-4 left-4 px-2.5 py-1 rounded-full bg-celac-green text-white text-xs font-semibold uppercase tracking-wide">
+              <span className="absolute top-4 left-4 px-2.5 py-1 rounded-md bg-celac-green text-white text-xs font-semibold uppercase tracking-wide">
                 {t(featured.tagKey)}
               </span>
             </div>
@@ -96,7 +96,7 @@ export default function NewsSection() {
                 transition={{ duration: 0.5, delay: 0.1 * (i + 1) }}
                 className="group flex gap-5 items-start"
               >
-                <div className="relative w-32 h-24 sm:w-40 sm:h-28 rounded-xl overflow-hidden shrink-0">
+                <div className="relative w-32 h-24 sm:w-40 sm:h-28 rounded-md overflow-hidden shrink-0">
                   <Image
                     src={item.image}
                     alt=""

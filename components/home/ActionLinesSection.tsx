@@ -37,9 +37,9 @@ export default function ActionLinesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.4 }}
-              className="relative rounded-2xl border border-gray-200 p-6 overflow-hidden"
+              className="relative rounded-md border border-gray-200 p-6 overflow-hidden"
             >
-              <div className="relative w-11 h-11 rounded-lg bg-celac-green flex items-center justify-center mb-5">
+              <div className="relative w-11 h-11 rounded-md bg-celac-green flex items-center justify-center mb-5">
                 <Icon size={20} className="text-white" strokeWidth={1.75} />
               </div>
               <h3 className="relative font-heading text-lg font-bold text-celac-navy mb-2 leading-snug">

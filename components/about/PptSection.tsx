@@ -54,7 +54,7 @@ export default function PptSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.03, duration: 0.35 }}
-              className={`rounded-xl bg-white border p-5 flex items-center gap-3 ${
+              className={`rounded-md bg-white border p-5 flex items-center gap-3 ${
                 current ? "border-celac-amber" : "border-gray-200"
               }`}
             >

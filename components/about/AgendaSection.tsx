@@ -30,7 +30,7 @@ export default function AgendaSection() {
           {topics.map((topic) => (
             <span
               key={topic}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-celac-navy text-sm font-medium"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-white border border-gray-200 text-celac-navy text-sm font-medium"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-celac-green shrink-0" />
               {topic}
