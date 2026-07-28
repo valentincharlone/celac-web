@@ -253,6 +253,26 @@
     "c32Country": "Uruguay",
     "c33Country": "Venezuela"
   },
+  "contacto": {
+    "eyebrow": "Let's talk",
+    "title": "Contact",
+    "lead": "We are here to foster communication between the peoples and States of Latin America and the Caribbean.",
+    "formEyebrow": "Get in touch",
+    "formTitle": "Leave us a message",
+    "formIntro": "Your message matters to us.",
+    "fieldName": "Full name",
+    "fieldPhone": "Phone number",
+    "fieldEmail": "Email address",
+    "fieldSubject": "Subject",
+    "fieldMessage": "Leave a message",
+    "submit": "Send message",
+    "submitting": "Sending...",
+    "successTitle": "Message sent!",
+    "successBody": "Thanks for reaching out. We'll get back to you shortly.",
+    "errorBody": "There was an error sending your message. Please try again in a few minutes.",
+    "sidebarText": "An open space for dialogue for Latin American and Caribbean cooperation.",
+    "location": "Tegucigalpa, Honduras"
+  },
   "notFound": {
     "eyebrow": "Error 404",
     "title": "Page not found",

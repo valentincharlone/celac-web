@@ -253,6 +253,26 @@
     "c32Country": "Uruguay",
     "c33Country": "Venezuela"
   },
+  "contacto": {
+    "eyebrow": "Hablemos",
+    "title": "Contacto",
+    "lead": "Estamos aquí para fomentar la comunicación entre los pueblos y los Estados de América Latina y el Caribe.",
+    "formEyebrow": "Toma contacto",
+    "formTitle": "Déjanos un mensaje",
+    "formIntro": "Su mensaje es importante para nosotros.",
+    "fieldName": "Nombre y Apellido",
+    "fieldPhone": "Número de teléfono",
+    "fieldEmail": "Correo electrónico",
+    "fieldSubject": "Asunto",
+    "fieldMessage": "Deja un mensaje",
+    "submit": "Enviar mensaje",
+    "submitting": "Enviando...",
+    "successTitle": "¡Mensaje enviado!",
+    "successBody": "Gracias por escribirnos. Te responderemos a la brevedad.",
+    "errorBody": "Hubo un error al enviar tu mensaje. Intentá de nuevo en unos minutos.",
+    "sidebarText": "Un espacio de diálogo abierto para la cooperación latinoamericana y caribeña.",
+    "location": "Tegucigalpa, Honduras"
+  },
   "notFound": {
     "eyebrow": "Error 404",
     "title": "Página no encontrada",
