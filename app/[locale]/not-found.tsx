@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
@@ -7,16 +8,26 @@ export default async function NotFound() {
   const t = await getTranslations("notFound");
 
   return (
-    <section className="relative bg-celac-navy pt-40 pb-24 md:pt-48 md:pb-28 min-h-screen flex items-center overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-b from-celac-navy-2/60 via-celac-navy to-celac-navy" />
-      <div className="relative max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <span className="inline-flex items-center mb-6 px-4 py-1.5 rounded-md border border-celac-green/40 bg-celac-green/10 text-celac-green text-xs font-semibold tracking-widest uppercase">
-          {t("eyebrow")}
-        </span>
-        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-[1.1] tracking-tight mb-6">
+    <section className="relative bg-white min-h-screen flex items-center px-4 sm:px-6 lg:px-8 py-24 overflow-hidden">
+      <span
+        aria-hidden
+        className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-heading font-bold text-[16rem] sm:text-[22rem] text-celac-gray leading-none"
+      >
+        404
+      </span>
+      <div className="relative max-w-2xl mx-auto text-center">
+        <Image
+          src="/images/logo-celac-color.png"
+          alt="CELAC"
+          width={300}
+          height={104}
+          className="w-auto object-cover mx-auto mb-8"
+          preload
+        />
+        <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold text-celac-navy leading-[1.1] tracking-tight mb-5">
           {t("title")}
         </h1>
-        <p className="text-white/65 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-10">
+        <p className="text-gray-500 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8">
           {t("body")}
         </p>
 
@@ -33,7 +44,7 @@ export default async function NotFound() {
           </Link>
           <Link
             href={`/${locale}/paises-miembros`}
-            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-white font-semibold rounded-md border border-white/20 bg-white/6 hover:bg-white/12 active:scale-[0.98] transition-all backdrop-blur-sm"
+            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-celac-navy font-semibold rounded-md border border-gray-200 bg-white hover:bg-celac-gray active:scale-[0.98] transition-all"
           >
             {t("ctaSecondary")}
           </Link>

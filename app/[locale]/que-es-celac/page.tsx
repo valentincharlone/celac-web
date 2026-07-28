@@ -25,10 +25,19 @@ export async function generateMetadata({ params }: Props) {
 export default async function QueEsCelacPage({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "queEsCelac" });
+  const tNav = await getTranslations({ locale, namespace: "nav" });
 
   return (
     <>
-      <PageHero eyebrow={t("eyebrow")} title={t("title")} lead={t("lead")} />
+      <PageHero
+        eyebrow={t("eyebrow")}
+        title={t("title")}
+        lead={t("lead")}
+        breadcrumbs={[
+          { label: tNav("home"), href: `/${locale}` },
+          { label: t("title") },
+        ]}
+      />
       <MissionVisionSection />
       <PrinciplesSection />
       <HowItWorksSection />

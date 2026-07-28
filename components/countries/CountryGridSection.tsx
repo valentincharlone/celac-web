@@ -98,26 +98,26 @@ export default function CountryGridSection() {
               whileInView: { opacity: 1, y: 0 },
               viewport: { once: true },
               transition: { delay: i * 0.015, duration: 0.35 },
-              className: `group rounded-md bg-celac-gray border border-gray-200 p-4 flex items-center gap-3 ${
+              className: `group relative rounded-md bg-celac-gray border border-gray-200 p-4 flex flex-col items-center text-center gap-2 ${
                 url ? "hover:border-celac-green hover:bg-white transition-colors" : ""
               }`,
             };
 
             const content = (
               <>
+                {url && (
+                  <ExternalLink
+                    size={12}
+                    className="absolute top-2 right-2 shrink-0 text-gray-300 group-hover:text-celac-green transition-colors"
+                  />
+                )}
                 <Flag
                   title={name}
-                  className="w-8 h-auto rounded-[3px] shrink-0 ring-1 ring-black/5"
+                  className="w-11 h-auto rounded-[3px] shrink-0 ring-1 ring-black/5"
                 />
                 <p className="font-heading font-bold text-celac-navy text-sm leading-snug">
                   {name}
                 </p>
-                {url && (
-                  <ExternalLink
-                    size={13}
-                    className="ml-auto shrink-0 text-gray-300 group-hover:text-celac-green transition-colors"
-                  />
-                )}
               </>
             );
 
@@ -127,6 +127,7 @@ export default function CountryGridSection() {
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`${name} — sitio oficial de gobierno, se abre en una pestaña nueva`}
                 {...cardProps}
               >
                 {content}

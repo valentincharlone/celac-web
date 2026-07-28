@@ -102,7 +102,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={`/${locale}${href}`}
-                    className="text-white/60 hover:text-white text-sm transition-colors"
+                    className="text-white/60 hover:text-white text-sm font-medium transition-colors"
                   >
                     {label}
                   </Link>
@@ -121,7 +121,7 @@ export default function Footer() {
                 <Mail size={14} className="shrink-0" />
                 <a
                   href="mailto:info@celac.cloud"
-                  className="hover:text-white transition-colors"
+                  className="font-medium hover:text-white transition-colors"
                 >
                   {t("footer.email")}
                 </a>

@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   /* CELAC Brand Colors — Opción B (refresh Fraunces/Inter) */
   --color-celac-navy: #071627;
   --color-celac-navy-2: #0d1b2f;

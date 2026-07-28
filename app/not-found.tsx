@@ -1,16 +1,28 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function GlobalNotFound() {
   return (
-    <section className="bg-celac-navy min-h-screen flex items-center justify-center px-4 text-center">
-      <div className="max-w-xl">
-        <span className="inline-flex items-center mb-6 px-4 py-1.5 rounded-md border border-celac-green/40 bg-celac-green/10 text-celac-green text-xs font-semibold tracking-widest uppercase">
-          Error 404
-        </span>
-        <h1 className="font-heading text-4xl sm:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-6">
+    <section className="relative bg-white min-h-screen flex items-center justify-center px-4 text-center overflow-hidden">
+      <span
+        aria-hidden
+        className="pointer-events-none select-none absolute inset-0 flex items-center justify-center font-heading font-bold text-[16rem] sm:text-[22rem] text-celac-gray leading-none"
+      >
+        404
+      </span>
+      <div className="relative max-w-xl">
+        <Image
+          src="/images/logo-celac-color.png"
+          alt="CELAC"
+          width={200}
+          height={64}
+          className="h-20 w-auto object-contain mx-auto mb-8"
+          preload
+        />
+        <h1 className="font-heading text-4xl sm:text-5xl font-bold text-celac-navy leading-[1.1] tracking-tight mb-5">
           Página no encontrada
         </h1>
-        <p className="text-white/65 text-base sm:text-lg leading-relaxed mb-10">
+        <p className="text-gray-500 text-base sm:text-lg leading-relaxed mb-8">
           La página que buscás no existe o fue movida.
         </p>
         <Link

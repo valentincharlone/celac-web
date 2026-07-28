@@ -69,7 +69,7 @@ export default function HeroSection() {
             src={s.image}
             alt=""
             fill
-            priority={i === 0}
+            preload={i === 0}
             className="object-cover object-center"
             quality={90}
           />
@@ -83,7 +83,7 @@ export default function HeroSection() {
 
       {/* ── Contenido ── */}
       <div className="relative z-20 w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-screen pt-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-screen pt-28 sm:pt-24">
           {/* ── Columna izquierda: texto animado ── */}
           <div className="flex flex-col justify-center">
             {/* min-h fijo para que el crossfade no cause saltos de layout */}

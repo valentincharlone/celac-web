@@ -53,7 +53,7 @@ export default function Header() {
               height={40}
               className="h-16 object-contain"
               style={{ width: "auto" }}
-              priority
+              preload
             />
           </Link>
 

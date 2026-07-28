@@ -86,7 +86,7 @@ export default function NewsSection() {
             </div>
           </motion.article>
 
-          <div className="flex flex-col gap-8">
+          <div className="grid grid-rows-2 gap-8">
             {rest.map((item, i) => (
               <motion.article
                 key={item.titleKey}
@@ -94,9 +94,9 @@ export default function NewsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * (i + 1) }}
-                className="group flex gap-5 items-start"
+                className="group rounded-md overflow-hidden bg-white border border-gray-100 flex flex-col sm:flex-row"
               >
-                <div className="relative w-32 h-24 sm:w-40 sm:h-28 rounded-md overflow-hidden shrink-0">
+                <div className="relative h-40 sm:h-auto sm:w-2/5 overflow-hidden shrink-0">
                   <Image
                     src={item.image}
                     alt=""
@@ -104,7 +104,7 @@ export default function NewsSection() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
-                <div className="min-w-0">
+                <div className="p-5 flex flex-col justify-center min-w-0">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-pillar-green text-xs font-semibold uppercase tracking-wide">
                       {t(item.tagKey)}
