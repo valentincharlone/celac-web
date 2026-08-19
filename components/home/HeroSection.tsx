@@ -3,19 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  ArrowRight,
-  ChevronDown,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { motion, AnimatePresence, useAnimationControls } from "framer-motion";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 
+/* Fotografía documental de la CELAC. `position` fija el punto de interés de cada
+   toma para que el object-cover del hero no lo recorte en pantallas anchas. */
 const SLIDE_IMAGES = [
-  "/images/hero-map.png",
-  "/images/hero-slider1.png",
-  "/images/hero-slider3.png",
+  { src: "/images/celac-2011-scaled.jpg", position: "50% 90%" },
+  { src: "/images/lqh-banderas.jpg", position: "62% 55%" },
+  { src: "/images/2025.jpg", position: "50% 35%" },
 ] as const;
 
 const INTERVAL = 4500;
@@ -28,7 +25,7 @@ export default function HeroSection() {
 
   const SLIDES = SLIDE_IMAGES.map((image, i) => ({
     id: i,
-    image,
+    ...image,
     title: t(`heroSlide${i + 1}Title` as "heroSlide1Title"),
     subtitle: t(`heroSlide${i + 1}Subtitle` as "heroSlide1Subtitle"),
   }));
@@ -37,16 +34,29 @@ export default function HeroSection() {
     () => setCurrent((c) => (c + 1) % SLIDES.length),
     [SLIDES.length],
   );
-  const prev = useCallback(
-    () => setCurrent((c) => (c - 1 + SLIDES.length) % SLIDES.length),
-    [SLIDES.length],
-  );
 
   useEffect(() => {
     if (paused) return;
     const timer = setInterval(next, INTERVAL);
     return () => clearInterval(timer);
   }, [next, paused]);
+
+  /* La barra del indicador activo replica el temporizador de arriba: se congela
+     donde está cuando se pausa (hover) y vuelve a correr desde cero al soltar,
+     igual que el setInterval, que también se reinicia entero. */
+  const progress = useAnimationControls();
+
+  useEffect(() => {
+    if (paused) {
+      progress.stop();
+      return;
+    }
+    progress.set({ width: "0%" });
+    progress.start({
+      width: "100%",
+      transition: { duration: INTERVAL / 1000, ease: "linear" },
+    });
+  }, [current, paused, progress]);
 
   const slide = SLIDES[current];
 
@@ -66,20 +76,29 @@ export default function HeroSection() {
           transition={{ duration: 1.2, ease: "easeInOut" }}
         >
           <Image
-            src={s.image}
+            src={s.src}
             alt=""
             fill
-            preload={i === 0}
-            className="object-cover object-center"
+            sizes="100vw"
+            /* Los tres slides están above the fold y se muestran dentro de los
+               primeros 9s, así que no se dejan al `lazy` por defecto: el segundo
+               y el tercero cargan igual pero en prioridad baja, para no competir
+               con el primero, que es el LCP. */
+            loading="eager"
+            fetchPriority={i === 0 ? "high" : "low"}
+            style={{ objectPosition: s.position }}
+            className="object-cover saturate-[0.8]"
             quality={90}
           />
         </motion.div>
       ))}
 
+      {/* Tinte navy plano: unifica la temperatura de las fotos con la paleta */}
+      <div className="absolute inset-0 bg-celac-navy/35 z-10" />
       {/* Overlay: oscuro izquierda → semitransparente derecha */}
-      <div className="absolute inset-0 bg-linear-to-r from-celac-navy via-celac-navy/80 to-celac-navy/35 z-10" />
+      <div className="absolute inset-0 bg-linear-to-r from-celac-navy via-celac-navy/35 to-transparent z-10" />
       {/* Franja oscura en la parte inferior */}
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-linear-to-t from-celac-navy to-transparent z-10" />
+      <div className="absolute inset-x-0 bottom-0 h-20 bg-linear-to-t from-celac-navy to-transparent z-10" />
 
       {/* ── Contenido ── */}
       <div className="relative z-20 w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 ">
@@ -87,7 +106,7 @@ export default function HeroSection() {
           {/* ── Columna izquierda: texto animado ── */}
           <div className="flex flex-col justify-center">
             {/* min-h fijo para que el crossfade no cause saltos de layout */}
-            <div className="relative min-h-90 mb-8">
+            <div className="relative min-h-80 mb-8">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current}
@@ -108,7 +127,7 @@ export default function HeroSection() {
                   </h1>
 
                   {/* Subtítulo */}
-                  <p className="text-white/65 text-base sm:text-lg leading-relaxed max-w-120">
+                  <p className="text-white/65 text-base sm:text-lg leading-relaxed max-w-134">
                     {slide.subtitle}
                   </p>
                 </motion.div>
@@ -140,43 +159,36 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Controles del slider — pie de sección */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center gap-4">
-        <button
-          onClick={prev}
-          className="w-8 h-8 rounded-full border border-white/20 bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/70 hover:text-white transition-all backdrop-blur-sm"
-        >
-          <ChevronLeft size={15} />
-        </button>
-
-        <div className="flex items-center gap-2">
-          {SLIDES.map((_, i) => (
+      {/* Indicadores del slider — al pie, sobre el mismo eje izquierdo que el
+          texto: repiten el contenedor del bloque de contenido para alinear. */}
+      <div className="absolute inset-x-0 bottom-8 z-30">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2">
+          {SLIDES.map((s, i) => (
             <button
-              key={i}
+              key={s.id}
+              type="button"
               onClick={() => setCurrent(i)}
-              className="relative h-1 rounded-full overflow-hidden transition-all duration-300"
-              style={{ width: i === current ? 32 : 14 }}
+              aria-label={t("heroGoToSlide", { title: s.title })}
+              aria-current={i === current}
+              /* La barra mide 4px, pero el botón agrega padding vertical para
+                 llegar a un área de toque de 24px (WCAG 2.2 target size). */
+              className="group py-2.5 cursor-pointer"
             >
-              <span className="absolute inset-0 bg-white/25 rounded-full" />
-              {i === current && (
-                <motion.span
-                  key={current}
-                  className="absolute inset-y-0 left-0 bg-celac-green rounded-full"
-                  initial={{ width: "0%" }}
-                  animate={{ width: paused ? "60%" : "100%" }}
-                  transition={{ duration: INTERVAL / 1000, ease: "linear" }}
-                />
-              )}
+              <span
+                className="relative flex h-1 rounded-full overflow-hidden transition-all duration-300"
+                style={{ width: i === current ? 40 : 16 }}
+              >
+                <span className="absolute inset-0 bg-white/25 group-hover:bg-white/40 transition-colors rounded-full" />
+                {i === current && (
+                  <motion.span
+                    className="absolute inset-y-0 left-0 bg-celac-green rounded-full"
+                    animate={progress}
+                  />
+                )}
+              </span>
             </button>
           ))}
         </div>
-
-        <button
-          onClick={next}
-          className="w-8 h-8 rounded-full border border-white/20 bg-white/10 hover:bg-white/20 flex items-center justify-center text-white/70 hover:text-white transition-all backdrop-blur-sm"
-        >
-          <ChevronRight size={15} />
-        </button>
       </div>
 
       {/* Scroll indicator */}

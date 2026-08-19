@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Plus, ArrowRight } from "lucide-react";
 
 const FAQS = [
@@ -17,8 +17,26 @@ export default function FaqSection() {
   const locale = useLocale();
   const [open, setOpen] = useState<number | null>(0);
 
+  /* Structured data: es el motivo principal por el que conviene tener las FAQ
+     en la home. Se arma con los mismos textos traducidos que se pintan abajo. */
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: FAQS.map(({ q, a }) => ({
+      "@type": "Question",
+      name: t(q),
+      acceptedAnswer: { "@type": "Answer", text: t(a) },
+    })),
+  };
+
   return (
     <section className="py-20 md:py-28 bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* ── Columna izquierda: intro + contacto ── */}
@@ -62,20 +80,25 @@ export default function FaqSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className=" border-gray-200 "
           >
             {FAQS.map(({ q, a }, i) => {
               const isOpen = open === i;
+              const buttonId = `faq-trigger-${i}`;
+              const panelId = `faq-panel-${i}`;
               return (
                 <div
                   key={q}
-                  className={` border-b border-gray-200 rounded-md transition-colors ${
+                  className={`border-b border-gray-200 rounded-md transition-colors ${
                     isOpen ? "bg-celac-gray" : ""
                   }`}
                 >
                   <button
+                    id={buttonId}
+                    type="button"
                     onClick={() => setOpen(isOpen ? null : i)}
-                    className="w-full flex items-start gap-4 px-4 py-6 text-left"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    className="w-full flex items-start gap-4 px-4 py-6 text-left cursor-pointer"
                   >
                     <span
                       className={`flex-1 font-heading font-semibold text-base sm:text-lg ${
@@ -91,21 +114,27 @@ export default function FaqSection() {
                       }`}
                     />
                   </button>
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <p className="text-gray-500 leading-relaxed pb-6 pl-4 pr-8">
-                          {t(a)}
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                  {/* El panel queda siempre montado —colapsa por altura en vez
+                      de desmontarse— para que las tres respuestas estén en el
+                      HTML y se indexen. `inert` lo saca del árbol de
+                      accesibilidad y del foco mientras está cerrado. */}
+                  <motion.div
+                    id={panelId}
+                    role="region"
+                    aria-labelledby={buttonId}
+                    inert={!isOpen}
+                    initial={false}
+                    animate={{
+                      height: isOpen ? "auto" : 0,
+                      opacity: isOpen ? 1 : 0,
+                    }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    className="overflow-hidden"
+                  >
+                    <p className="text-gray-500 leading-relaxed pb-6 pl-4 pr-8">
+                      {t(a)}
+                    </p>
+                  </motion.div>
                 </div>
               );
             })}

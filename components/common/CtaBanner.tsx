@@ -18,7 +18,7 @@ export default function CtaBanner({ title, ctaLabel, href }: Props) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center md:items-center justify-between gap-8 text-center md:text-left"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left"
       >
         <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-snug max-w-xl">
           {title}

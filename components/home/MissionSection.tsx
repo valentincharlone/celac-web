@@ -2,7 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useReducedMotion } from "framer-motion";
 import SectionEyebrow from "@/components/ui/SectionEyebrow";
 
 const STATS = [
@@ -11,6 +11,8 @@ const STATS = [
   { valueKey: "statsAreas", number: 18, suffix: "" },
   { valueKey: "statsCitizens", number: 620, suffix: "M" },
 ] as const;
+
+const COUNT_DURATION = 1500;
 
 function AnimatedCounter({
   target,
@@ -22,28 +24,45 @@ function AnimatedCounter({
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true });
+  const reduceMotion = useReducedMotion();
+
+  /* Con reduced-motion se muestra el valor final directamente, sin pasar por el
+     estado: así el efecto de abajo no corre y no hace falta un setState. */
+  const display = reduceMotion ? target : count;
 
   useEffect(() => {
-    if (!inView) return;
-    let start = 0;
-    const duration = 1500;
-    const step = Math.ceil(target / (duration / 16));
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
-      } else {
-        setCount(start);
-      }
-    }, 16);
-    return () => clearInterval(timer);
-  }, [inView, target]);
+    if (!inView || reduceMotion) return;
+
+    /* El progreso se calcula sobre el tiempo transcurrido, no sumando un paso
+       fijo por tick: así los cuatro contadores terminan juntos a los 1500ms sin
+       importar su magnitud. Con el paso fijo, el 8 tardaba 128ms y el 620,
+       1424ms. requestAnimationFrame además va sincronizado al refresh. */
+    let raf = 0;
+    const started = performance.now();
+
+    const tick = (now: number) => {
+      const progress = Math.min((now - started) / COUNT_DURATION, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(target * eased));
+      if (progress < 1) raf = requestAnimationFrame(tick);
+    };
+
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [inView, target, reduceMotion]);
 
   return (
     <span ref={ref}>
-      {count}
-      {suffix}
+      <span aria-hidden>
+        {display}
+        {suffix}
+      </span>
+      {/* El valor final, para que un lector de pantalla no anuncie un número
+          intermedio de la animación. */}
+      <span className="sr-only">
+        {target}
+        {suffix}
+      </span>
     </span>
   );
 }
@@ -64,12 +83,15 @@ export default function MissionSection() {
           <SectionEyebrow align="center" tone="dark">
             {t("missionTitle")}
           </SectionEyebrow>
-          <p className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">
             {t("missionSubtitle")}
-          </p>
+          </h2>
         </motion.div>
 
-        <div className="flex flex-wrap items-baseline justify-center gap-y-6">
+        {/* Grid en vez de flex-wrap: con wrap, el separador `border-l` quedaba
+            colgando al inicio de cada fila nueva. Acá el borde depende de la
+            posición en la grilla — 2 columnas en mobile, 4 desde md. */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-y-10">
           {STATS.map(({ valueKey, number, suffix }, i) => (
             <motion.div
               key={valueKey}
@@ -77,12 +99,14 @@ export default function MissionSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.4 }}
-              className="flex items-baseline gap-2 px-3 sm:px-5 border-l border-white/15 first:border-0 first:pl-0 last:pr-0"
+              className={`flex flex-col items-center text-center px-3 sm:px-5 border-white/15 md:border-l md:first:border-l-0 ${
+                i % 2 === 1 ? "border-l" : ""
+              }`}
             >
-              <span className="font-heading text-2xl sm:text-3xl font-bold text-celac-green">
+              <span className="font-heading text-4xl sm:text-5xl font-bold text-celac-green">
                 <AnimatedCounter target={number} suffix={suffix} />
               </span>
-              <span className="text-white/50 text-xs sm:text-sm font-medium uppercase tracking-wide">
+              <span className="mt-2 text-white/50 text-xs sm:text-sm font-medium uppercase tracking-wide">
                 {t(valueKey)}
               </span>
             </motion.div>

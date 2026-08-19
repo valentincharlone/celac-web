@@ -20,8 +20,12 @@ export default async function HomePage({ params }: Props) {
     <>
       <HeroSection />
       <AboutSection />
-      <MissionSection />
       <WhatWeDoSection />
+      {/* Mission va acá y no antes de WhatWeDo: es el único bloque oscuro del
+          cuerpo, y a mitad de página reparte el peso visual en vez de rebotar
+          contra el hero. Además cierra la secuencia quiénes somos → qué
+          hacemos → los números. */}
+      <MissionSection />
       <NewsSection />
       <ActionLinesSection />
       <FaqSection />

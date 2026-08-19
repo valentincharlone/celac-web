@@ -23,7 +23,7 @@ export default function ActionLinesSection() {
           transition={{ duration: 0.5 }}
           className="max-w-2xl mx-auto mb-16 text-center"
         >
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-celac-navy mb-4">
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-celac-navy mb-4">
             {t("actionLinesTitle")}
           </h2>
           <p className="text-gray-500">{t("actionLinesSubtitle")}</p>
@@ -37,15 +37,21 @@ export default function ActionLinesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.4 }}
-              className="relative rounded-md border border-gray-200 p-6 overflow-hidden"
+              className="rounded-md border border-gray-200 p-6"
             >
-              <div className="relative w-11 h-11 rounded-md bg-celac-green flex items-center justify-center mb-5">
-                <Icon size={20} className="text-white" strokeWidth={1.75} />
+              {/* Mismo tratamiento que los pilares de AboutSection */}
+              <div className="w-10 h-10 rounded-md bg-celac-green/10 flex items-center justify-center mb-5">
+                <Icon
+                  size={18}
+                  className="text-celac-green"
+                  strokeWidth={1.75}
+                  aria-hidden
+                />
               </div>
-              <h3 className="relative font-heading text-lg font-bold text-celac-navy mb-2 leading-snug">
+              <h3 className="font-heading text-lg font-bold text-celac-navy mb-2 leading-snug">
                 {t(`${key}Title` as "actionLine1Title")}
               </h3>
-              <p className="relative text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-500 text-sm leading-relaxed">
                 {t(`${key}Desc` as "actionLine1Desc")}
               </p>
             </motion.div>
