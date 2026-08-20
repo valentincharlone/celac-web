@@ -31,7 +31,7 @@ export default async function ContactoPage({ params }: Props) {
           { label: tNav("home"), href: `/${locale}` },
           { label: t("title") },
         ]}
-        backgroundImage="/images/hero-map.png"
+        backgroundImage="/images/hero-slider1.png"
       />
       <ContactFormSection />
       <MapSection />

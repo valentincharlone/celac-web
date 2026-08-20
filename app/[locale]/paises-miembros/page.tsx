@@ -28,7 +28,7 @@ export default async function PaisesMiembrosPage({ params }: Props) {
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
-        backgroundImage="/images/bg-2.jpg"
+        backgroundImage="/images/hero-map.png"
         breadcrumbs={[
           { label: tNav("home"), href: `/${locale}` },
           { label: t("title") },

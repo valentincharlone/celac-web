@@ -45,6 +45,7 @@ export default async function NoticiaPage({ params }: Props) {
         title={post.title[l]}
         lead={post.excerpt[l]}
         backgroundImage={post.image}
+        backgroundTone="photo"
         breadcrumbs={[
           { label: tNav("home"), href: `/${locale}` },
           { label: t("title"), href: `/${locale}/noticias` },

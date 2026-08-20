@@ -27,6 +27,7 @@ export default async function NoticiasPage({ params }: Props) {
         title={t("title")}
         lead={t("lead")}
         backgroundImage="/images/bg-2.jpg"
+        backgroundTone="photo"
         breadcrumbs={[
           { label: tNav("home"), href: `/${locale}` },
           { label: t("title") },

@@ -12,6 +12,11 @@ type Props = {
   lead: string;
   breadcrumbs?: Crumb[];
   backgroundImage?: string;
+  /* Cuánto velo lleva el fondo. "texture" es para ilustraciones oscuras y de
+     bajo contraste (el mapa, la constelación): se las deja ver. "photo" es para
+     fotografía real, que trae zonas claras capaces de tragarse el título en
+     blanco, así que va más tapada. */
+  backgroundTone?: "texture" | "photo";
 };
 
 export default function PageHero({
@@ -20,7 +25,9 @@ export default function PageHero({
   lead,
   breadcrumbs,
   backgroundImage,
+  backgroundTone = "texture",
 }: Props) {
+  const isPhoto = backgroundTone === "photo";
   return (
     <section className="relative bg-celac-navy pt-40 pb-24 md:pt-48 md:pb-28 overflow-hidden">
       {backgroundImage && (
@@ -30,13 +37,17 @@ export default function PageHero({
           fill
           preload
           sizes="100vw"
-          className="object-cover object-center opacity-20"
+          className={`object-cover object-center ${isPhoto ? "opacity-40" : "opacity-55"}`}
         />
       )}
       <div
         className={`absolute inset-0 bg-linear-to-b ${
-          backgroundImage ? "from-celac-navy/95" : "from-celac-navy-2/60"
-        } via-celac-navy to-celac-navy`}
+          backgroundImage
+            ? isPhoto
+              ? "from-celac-navy/90 via-celac-navy/80 to-celac-navy/95"
+              : "from-celac-navy/75 via-celac-navy/55 to-celac-navy/90"
+            : "from-celac-navy-2/60 via-celac-navy to-celac-navy"
+        }`}
       />
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div

@@ -26,7 +26,7 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <SectionEyebrow>{t("aboutTitle")}</SectionEyebrow>
+          {/* <SectionEyebrow>{t("aboutTitle")}</SectionEyebrow> */}
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-celac-navy mb-6 leading-tight">
             {t("aboutLead")}
           </h2>
