@@ -88,7 +88,7 @@ export default function FaqSection() {
               return (
                 <div
                   key={q}
-                  className={`border-b border-gray-200 rounded-md transition-colors ${
+                  className={`border-b border-gray-200 rounded-sm transition-colors ${
                     isOpen ? "bg-celac-gray" : ""
                   }`}
                 >

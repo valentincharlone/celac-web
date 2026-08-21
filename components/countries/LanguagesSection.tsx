@@ -33,7 +33,7 @@ export default function LanguagesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06, duration: 0.4 }}
-              className="rounded-md bg-celac-gray border border-gray-200 p-6 text-center"
+              className="rounded-sm bg-celac-gray border border-gray-200 p-6 text-center"
             >
               <p className="font-heading text-3xl sm:text-4xl font-bold text-celac-green mb-1.5">
                 {count}

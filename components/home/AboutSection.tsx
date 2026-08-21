@@ -43,7 +43,7 @@ export default function AboutSection() {
               transition={{ delay: i * 0.08, duration: 0.4 }}
               className="flex items-start gap-4 py-5 border-b border-gray-100 first:pt-0 last:border-0 last:pb-0"
             >
-              <div className="shrink-0 w-10 h-10 rounded-md bg-celac-green/10 flex items-center justify-center">
+              <div className="shrink-0 w-10 h-10 rounded-sm bg-celac-green/10 flex items-center justify-center">
                 <Icon
                   size={18}
                   className="text-celac-green"

@@ -9,7 +9,7 @@ export default function MissionVisionSection() {
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 rounded-md overflow-hidden border border-gray-200 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 rounded-sm overflow-hidden border border-gray-200 mb-16">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

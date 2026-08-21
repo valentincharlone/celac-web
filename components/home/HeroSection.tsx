@@ -117,7 +117,7 @@ export default function HeroSection() {
                   transition={{ duration: 0.35, ease: "easeInOut" }}
                 >
                   {/* Badge */}
-                  <span className="inline-flex items-center mb-6 px-4 py-1.5 rounded-md border border-celac-green/40 bg-celac-green/10 text-celac-green text-xs font-semibold tracking-widest uppercase backdrop-blur-sm">
+                  <span className="inline-flex items-center mb-6 px-4 py-1.5 rounded-sm border border-celac-green-light/50 bg-celac-navy/60 backdrop-blur-sm text-celac-green-light text-xs font-semibold tracking-widest uppercase">
                     {t("heroBadge")}
                   </span>
 
@@ -138,14 +138,14 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <Link
                 href={`/${locale}/que-es-celac`}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-md hover:bg-celac-green-hover active:scale-[0.98] transition-all"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-sm hover:bg-celac-green-hover active:scale-[0.98] transition-all"
               >
                 {t("heroCta")}
                 <ArrowRight size={16} />
               </Link>
               <Link
                 href={`/${locale}/noticias`}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-white font-semibold rounded-md border border-white/20 bg-white/6 hover:bg-white/12 active:scale-[0.98] transition-all backdrop-blur-sm"
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-white font-semibold rounded-sm border border-white/20 bg-white/6 hover:bg-white/12 active:scale-[0.98] transition-all backdrop-blur-sm"
               >
                 {t("heroNewsCta")}
               </Link>

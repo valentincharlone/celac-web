@@ -65,7 +65,7 @@ export default function ClosingSection() {
 
           <Link
             href={`/${locale}/repositorio`}
-            className="group inline-flex items-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-md hover:bg-celac-green-hover active:scale-[0.98] transition-all"
+            className="group inline-flex items-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-sm hover:bg-celac-green-hover active:scale-[0.98] transition-all"
           >
             {t("closingCta")}
             <ArrowRight

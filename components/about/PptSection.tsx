@@ -54,13 +54,13 @@ export default function PptSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.03, duration: 0.35 }}
-              className={`rounded-md bg-white border p-5 flex items-center gap-3 ${
+              className={`rounded-sm bg-white border p-5 flex items-center gap-3 ${
                 current ? "border-celac-amber" : "border-gray-200"
               }`}
             >
               <Flag
                 title={t(`${key}Country` as "ppt1Country")}
-                className="w-7 h-auto rounded-[3px] shrink-0 ring-1 ring-black/5"
+                className="w-7 h-auto rounded-sm shrink-0 ring-1 ring-black/5"
               />
               <div className="min-w-0">
                 <p className="font-heading font-bold text-celac-navy text-sm leading-snug">

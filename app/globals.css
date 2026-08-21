@@ -6,6 +6,9 @@
   --color-celac-navy-2: #0d1b2f;
   --color-celac-green: #0f7a4d;
   --color-celac-green-hover: #0b5c3a;
+  /* El verde de marca es oscuro (L 27%) y sobre fotografía se apaga; esta es
+     su versión clara, solo para texto y bordes sobre fondos oscuros. */
+  --color-celac-green-light: #45c98d;
   --color-celac-sky: #1e9fd4;
   --color-celac-amber: #e8a838;
   --color-celac-gray: #f5f7fa;

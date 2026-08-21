@@ -63,7 +63,7 @@ export default function Header() {
               <Link
                 key={key}
                 href={`/${locale}${href}`}
-                className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-sm transition-colors"
               >
                 {t(key)}
               </Link>
@@ -75,13 +75,13 @@ export default function Header() {
             <div className="relative">
               <button
                 onClick={() => setLangOpen((v) => !v)}
-                className="flex items-center gap-1 px-2 py-1.5 text-white/80 hover:text-white text-sm rounded-md hover:bg-white/10 transition-colors"
+                className="flex items-center gap-1 px-2 py-1.5 text-white/80 hover:text-white text-sm rounded-sm hover:bg-white/10 transition-colors"
               >
                 <Globe size={14} />
                 <span>{locale.toUpperCase()}</span>
               </button>
               {langOpen && (
-                <div className="absolute right-0 mt-1 w-20 bg-white rounded-md shadow-lg overflow-hidden">
+                <div className="absolute right-0 mt-1 w-20 bg-white rounded-sm shadow-lg overflow-hidden">
                   {LOCALES.map(({ code, label }) => (
                     <Link
                       key={code}
@@ -101,7 +101,7 @@ export default function Header() {
             </div>
 
             <button
-              className="lg:hidden p-2 text-white hover:bg-white/10 rounded-md transition-colors"
+              className="lg:hidden p-2 text-white hover:bg-white/10 rounded-sm transition-colors"
               onClick={() => setMobileOpen((v) => !v)}
             >
               {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -119,7 +119,7 @@ export default function Header() {
                 key={key}
                 href={`/${locale}${href}`}
                 onClick={() => setMobileOpen(false)}
-                className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-md transition-colors"
+                className="px-3 py-2 text-sm text-white/80 hover:text-white hover:bg-white/10 rounded-sm transition-colors"
               >
                 {t(key)}
               </Link>

@@ -98,7 +98,7 @@ export default function CountryGridSection() {
               whileInView: { opacity: 1, y: 0 },
               viewport: { once: true },
               transition: { delay: i * 0.015, duration: 0.35 },
-              className: `group relative rounded-md bg-celac-gray border border-gray-200 p-4 flex flex-col items-center text-center gap-2 ${
+              className: `group relative rounded-sm bg-celac-gray border border-gray-200 p-4 flex flex-col items-center text-center gap-2 ${
                 url ? "hover:border-celac-green hover:bg-white transition-colors" : ""
               }`,
             };
@@ -113,7 +113,7 @@ export default function CountryGridSection() {
                 )}
                 <Flag
                   title={name}
-                  className="w-11 h-auto rounded-[3px] shrink-0 ring-1 ring-black/5"
+                  className="w-11 h-auto rounded-sm shrink-0 ring-1 ring-black/5"
                 />
                 <p className="font-heading font-bold text-celac-navy text-sm leading-snug">
                   {name}

@@ -34,7 +34,7 @@ export default async function NotFound() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             href={`/${locale}`}
-            className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-md hover:bg-celac-green-hover active:scale-[0.98] transition-all"
+            className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-sm hover:bg-celac-green-hover active:scale-[0.98] transition-all"
           >
             {t("cta")}
             <ArrowRight
@@ -44,7 +44,7 @@ export default async function NotFound() {
           </Link>
           <Link
             href={`/${locale}/paises-miembros`}
-            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-celac-navy font-semibold rounded-md border border-gray-200 bg-white hover:bg-celac-gray active:scale-[0.98] transition-all"
+            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-celac-navy font-semibold rounded-sm border border-gray-200 bg-white hover:bg-celac-gray active:scale-[0.98] transition-all"
           >
             {t("ctaSecondary")}
           </Link>

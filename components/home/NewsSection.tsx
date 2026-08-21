@@ -37,7 +37,7 @@ export default function NewsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="group rounded-md overflow-hidden bg-white border border-gray-100 flex flex-col"
+            className="group rounded-sm overflow-hidden bg-white border border-gray-100 flex flex-col"
           >
             <Link href={`/${locale}/noticias/${featured.slug}`}>
               <div className="relative h-64 lg:h-72 overflow-hidden shrink-0">
@@ -47,7 +47,7 @@ export default function NewsSection() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <span className="absolute top-4 left-4 px-2.5 py-1 rounded-md bg-celac-green text-white text-xs font-semibold uppercase tracking-wide">
+                <span className="absolute top-4 left-4 px-2.5 py-1 rounded-sm bg-celac-green text-white text-xs font-semibold uppercase tracking-wide">
                   {featured.tag[locale]}
                 </span>
               </div>
@@ -75,7 +75,7 @@ export default function NewsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * (i + 1) }}
-                className="group rounded-md overflow-hidden bg-white border border-gray-100"
+                className="group rounded-sm overflow-hidden bg-white border border-gray-100"
               >
                 <Link
                   href={`/${locale}/noticias/${item.slug}`}

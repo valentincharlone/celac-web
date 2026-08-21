@@ -33,6 +33,9 @@ export default async function QueEsCelacPage({ params }: Props) {
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
+        backgroundImage="/images/celac-2011-scaled.jpg"
+        backgroundPosition="center top"
+        backgroundTone="photo"
         breadcrumbs={[
           { label: tNav("home"), href: `/${locale}` },
           { label: t("title") },

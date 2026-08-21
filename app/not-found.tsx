@@ -27,7 +27,7 @@ export default function GlobalNotFound() {
         </p>
         <Link
           href="/es"
-          className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-md hover:bg-celac-green-hover transition-colors"
+          className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-sm hover:bg-celac-green-hover transition-colors"
         >
           Volver al inicio
         </Link>

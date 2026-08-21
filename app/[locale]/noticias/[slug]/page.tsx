@@ -45,7 +45,7 @@ export default async function NoticiaPage({ params }: Props) {
         title={post.title[l]}
         lead={post.excerpt[l]}
         backgroundImage={post.image}
-        backgroundTone="photo"
+        backgroundTone="photoBright"
         breadcrumbs={[
           { label: tNav("home"), href: `/${locale}` },
           { label: t("title"), href: `/${locale}/noticias` },
@@ -55,7 +55,7 @@ export default async function NoticiaPage({ params }: Props) {
 
       <article className="py-16 md:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative aspect-16/9 rounded-md overflow-hidden bg-celac-gray mb-10">
+          <div className="relative aspect-16/9 rounded-sm overflow-hidden bg-celac-gray mb-10">
             <Image
               src={post.image}
               alt=""
@@ -116,7 +116,7 @@ export default async function NoticiaPage({ params }: Props) {
                 href={`/${locale}/noticias/${item.slug}`}
                 className="group"
               >
-                <div className="relative aspect-16/10 rounded-md overflow-hidden bg-white mb-4">
+                <div className="relative aspect-16/10 rounded-sm overflow-hidden bg-white mb-4">
                   <Image
                     src={item.image}
                     alt=""

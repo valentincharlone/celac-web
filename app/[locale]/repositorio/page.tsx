@@ -29,7 +29,7 @@ export default async function RepositorioPage({ params }: Props) {
         eyebrow={t("eyebrow")}
         title={t("title")}
         lead={t("lead")}
-        backgroundImage="/images/bg-2.jpg"
+        backgroundImage="/images/hero-slider3.png"
         backgroundTone="photo"
         breadcrumbs={[
           { label: tNav("home"), href: `/${locale}` },
@@ -40,7 +40,7 @@ export default async function RepositorioPage({ params }: Props) {
 
       <section className="pb-20 md:pb-28 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="border-l-2 border-celac-green bg-celac-gray rounded-r-md px-6 py-6 sm:px-8 sm:py-7 flex flex-col sm:flex-row sm:items-center gap-5 justify-between">
+          <div className="border-l-2 border-celac-green bg-celac-gray rounded-r-sm px-6 py-6 sm:px-8 sm:py-7 flex flex-col sm:flex-row sm:items-center gap-5 justify-between">
             <div>
               <h2 className="font-heading text-lg font-bold text-celac-navy mb-1">
                 {t("externalTitle")}
@@ -53,7 +53,7 @@ export default async function RepositorioPage({ params }: Props) {
               href={EXTERNAL_REPOSITORY}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md bg-celac-green text-white text-sm font-semibold hover:bg-celac-green-hover transition-colors"
+              className="shrink-0 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-sm bg-celac-green text-white text-sm font-semibold hover:bg-celac-green-hover transition-colors"
             >
               {t("externalCta")}
               <ExternalLink size={14} />

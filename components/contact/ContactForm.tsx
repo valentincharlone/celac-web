@@ -7,7 +7,7 @@ import { Loader2, Send, CheckCircle2, AlertCircle } from "lucide-react";
 type Status = "idle" | "loading" | "success" | "error";
 
 const inputClass =
-  "w-full rounded-md border border-gray-200 bg-celac-gray px-4 py-3 text-sm text-celac-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-celac-green/40 focus:border-celac-green transition-colors";
+  "w-full rounded-sm border border-gray-200 bg-celac-gray px-4 py-3 text-sm text-celac-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-celac-green/40 focus:border-celac-green transition-colors";
 
 export default function ContactForm() {
   const t = useTranslations("contacto");
@@ -44,7 +44,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-md border border-celac-green/30 bg-celac-green/5 p-8 flex flex-col items-center text-center gap-3">
+      <div className="rounded-sm border border-celac-green/30 bg-celac-green/5 p-8 flex flex-col items-center text-center gap-3">
         <CheckCircle2 className="text-celac-green" size={32} />
         <p className="font-heading font-bold text-celac-navy text-lg">
           {t("successTitle")}
@@ -102,7 +102,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-md hover:bg-celac-green-hover active:scale-[0.98] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-celac-green text-white font-semibold rounded-sm hover:bg-celac-green-hover active:scale-[0.98] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {status === "loading" ? (
           <>

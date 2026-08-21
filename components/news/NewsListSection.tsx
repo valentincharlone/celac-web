@@ -56,7 +56,7 @@ export default function NewsListSection() {
           >
             <Link
               href={`/${locale}/noticias/${featured.slug}`}
-              className="lg:col-span-3 relative aspect-16/10 overflow-hidden rounded-md bg-celac-gray"
+              className="lg:col-span-3 relative aspect-16/10 overflow-hidden rounded-sm bg-celac-gray"
             >
               <Image
                 src={featured.image}
@@ -113,7 +113,7 @@ export default function NewsListSection() {
                 href={`/${locale}/noticias/${post.slug}`}
                 className="flex flex-col sm:flex-row gap-5 sm:gap-8 py-8"
               >
-                <div className="relative h-44 sm:h-28 sm:w-44 shrink-0 overflow-hidden rounded-md bg-celac-gray">
+                <div className="relative h-44 sm:h-28 sm:w-44 shrink-0 overflow-hidden rounded-sm bg-celac-gray">
                   <Image
                     src={post.image}
                     alt=""

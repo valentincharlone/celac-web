@@ -37,10 +37,10 @@ export default function ActionLinesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.4 }}
-              className="rounded-md border border-gray-200 p-6"
+              className="rounded-sm border border-gray-200 p-6"
             >
               {/* Mismo tratamiento que los pilares de AboutSection */}
-              <div className="w-10 h-10 rounded-md bg-celac-green/10 flex items-center justify-center mb-5">
+              <div className="w-10 h-10 rounded-sm bg-celac-green/10 flex items-center justify-center mb-5">
                 <Icon
                   size={18}
                   className="text-celac-green"

@@ -8,7 +8,7 @@ export default function ContactInfoCard() {
   const t = useTranslations("contacto");
 
   return (
-    <div className="rounded-md border border-gray-200 bg-celac-gray p-8 h-fit">
+    <div className="rounded-sm border border-gray-200 bg-celac-gray p-8 h-fit">
       <p className="text-gray-600 leading-relaxed">{t("sidebarText")}</p>
 
       <div className="border-t border-gray-200 my-6" />

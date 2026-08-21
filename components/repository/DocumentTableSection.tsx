@@ -46,7 +46,7 @@ export default function DocumentTableSection() {
   };
 
   const selectClass =
-    "h-11 px-3 rounded-md border border-gray-200 bg-white text-sm text-celac-navy focus:outline-none focus:border-celac-green transition-colors";
+    "h-11 px-3 rounded-sm border border-gray-200 bg-white text-sm text-celac-navy focus:outline-none focus:border-celac-green transition-colors";
 
   return (
     <section className="py-20 md:py-28 bg-white">
@@ -63,7 +63,7 @@ export default function DocumentTableSection() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder={t("searchPlaceholder")}
               aria-label={t("searchPlaceholder")}
-              className="w-full h-11 pl-10 pr-3 rounded-md border border-gray-200 bg-white text-sm text-celac-navy placeholder:text-gray-400 focus:outline-none focus:border-celac-green transition-colors"
+              className="w-full h-11 pl-10 pr-3 rounded-sm border border-gray-200 bg-white text-sm text-celac-navy placeholder:text-gray-400 focus:outline-none focus:border-celac-green transition-colors"
             />
           </div>
 

@@ -50,7 +50,7 @@ export default function EventsSection() {
               transition={{ delay: i * 0.1, duration: 0.4 }}
               className="flex items-center gap-6 py-6 border-b border-gray-200"
             >
-              <div className="shrink-0 w-16 h-16 rounded-md bg-celac-gray flex flex-col items-center justify-center border border-gray-200">
+              <div className="shrink-0 w-16 h-16 rounded-sm bg-celac-gray flex flex-col items-center justify-center border border-gray-200">
                 <span className="font-heading text-xl font-bold text-celac-navy leading-none">
                   {t(dayKey)}
                 </span>
@@ -74,7 +74,7 @@ export default function EventsSection() {
         <div className="text-center mt-10">
           <Link
             href={`/${locale}/eventos`}
-            className="inline-flex items-center gap-2 px-7 py-3 bg-celac-navy text-white font-semibold rounded-md hover:bg-celac-navy/90 active:scale-[0.98] transition-all"
+            className="inline-flex items-center gap-2 px-7 py-3 bg-celac-navy text-white font-semibold rounded-sm hover:bg-celac-navy/90 active:scale-[0.98] transition-all"
           >
             {t("eventsCta")}
             <ArrowRight size={16} />

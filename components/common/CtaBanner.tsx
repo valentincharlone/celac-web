@@ -25,7 +25,7 @@ export default function CtaBanner({ title, ctaLabel, href }: Props) {
         </h2>
         <Link
           href={href}
-          className="group shrink-0 inline-flex items-center gap-2 px-8 py-3 bg-celac-green text-white font-semibold rounded-md hover:bg-celac-green-hover transition-colors"
+          className="group shrink-0 inline-flex items-center gap-2 px-8 py-3 bg-celac-green text-white font-semibold rounded-sm hover:bg-celac-green-hover transition-colors"
         >
           {ctaLabel}
           <ArrowRight
