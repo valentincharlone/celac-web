@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import SectionEyebrow from "@/components/ui/SectionEyebrow";
 
 /* Cierre de la home. Reemplaza al CtaBanner genérico (que sigue en
    que-es-celac): en vez de una franja de color con una frase inspiracional,
@@ -55,7 +54,6 @@ export default function ClosingSection() {
           transition={{ duration: 0.5, delay: 0.15 }}
           className="max-w-2xl"
         >
-
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-white leading-tight mb-5">
             {t("closingTitle")}
           </h2>

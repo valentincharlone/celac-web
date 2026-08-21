@@ -16,7 +16,10 @@ export default function ContactInfoCard() {
       <ul className="space-y-3">
         <li className="flex items-center gap-2 text-celac-navy text-sm font-medium">
           <Mail size={15} className="shrink-0 text-celac-green" />
-          <a href="mailto:info@celac.cloud" className="hover:text-celac-green transition-colors">
+          <a
+            href="mailto:info@celac.cloud"
+            className="hover:text-celac-green transition-colors"
+          >
             info@celac.cloud
           </a>
         </li>

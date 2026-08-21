@@ -9,7 +9,7 @@ const ContactMap = dynamic(() => import("./ContactMap"), {
 
 export default function MapSection() {
   return (
-    <section className="h-[420px] w-full">
+    <section className="h-105 w-full">
       <ContactMap />
     </section>
   );

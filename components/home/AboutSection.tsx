@@ -3,7 +3,6 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { MessageSquare, Globe2, Leaf, Shield } from "lucide-react";
-import SectionEyebrow from "@/components/ui/SectionEyebrow";
 
 /* Un solo acento de marca para los cuatro pilares: el color no distingue nada
    entre ellos, así que rotarlo solo agregaba ruido. */

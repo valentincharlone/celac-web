@@ -12,7 +12,10 @@ export default function Breadcrumb({ items }: { items: Crumb[] }) {
       {items.map((item, i) => (
         <span key={i} className="flex items-center gap-1.5">
           {item.href ? (
-            <Link href={item.href} className="hover:text-white/70 transition-colors">
+            <Link
+              href={item.href}
+              className="hover:text-white/70 transition-colors"
+            >
               {item.label}
             </Link>
           ) : (

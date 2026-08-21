@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { useState, useEffect } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 const NAV_LINKS = [
   { key: "whatIsCelac", href: "/que-es-celac" },
@@ -14,17 +15,10 @@ const NAV_LINKS = [
   { key: "contact", href: "/contacto" },
 ] as const;
 
-const LOCALES = [
-  { code: "es", label: "ES" },
-  { code: "en", label: "EN" },
-  { code: "pt", label: "PT" },
-] as const;
-
 export default function Header() {
   const t = useTranslations("nav");
   const locale = useLocale();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [langOpen, setLangOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -72,33 +66,7 @@ export default function Header() {
 
           {/* Language switcher + mobile toggle */}
           <div className="flex items-center gap-2">
-            <div className="relative">
-              <button
-                onClick={() => setLangOpen((v) => !v)}
-                className="flex items-center gap-1 px-2 py-1.5 text-white/80 hover:text-white text-sm rounded-sm hover:bg-white/10 transition-colors"
-              >
-                <Globe size={14} />
-                <span>{locale.toUpperCase()}</span>
-              </button>
-              {langOpen && (
-                <div className="absolute right-0 mt-1 w-20 bg-white rounded-sm shadow-lg overflow-hidden">
-                  {LOCALES.map(({ code, label }) => (
-                    <Link
-                      key={code}
-                      href={`/${code}`}
-                      onClick={() => setLangOpen(false)}
-                      className={`block px-4 py-2 text-sm transition-colors ${
-                        code === locale
-                          ? "bg-celac-green text-white"
-                          : "text-gray-700 hover:bg-gray-50"
-                      }`}
-                    >
-                      {label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
+            <LanguageSwitcher />
 
             <button
               className="lg:hidden p-2 text-white hover:bg-white/10 rounded-sm transition-colors"

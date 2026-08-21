@@ -15,11 +15,7 @@ import {
 const DIACRITICS = /[̀-ͯ]/g;
 
 const normalize = (value: string) =>
-  value
-    .trim()
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(DIACRITICS, "");
+  value.trim().toLowerCase().normalize("NFD").replace(DIACRITICS, "");
 
 export default function DocumentTableSection() {
   const t = useTranslations("repositorio");
@@ -187,7 +183,10 @@ export default function DocumentTableSection() {
               rel="noopener noreferrer"
               className="flex gap-3 py-5"
             >
-              <FileText size={18} className="mt-0.5 shrink-0 text-celac-green" />
+              <FileText
+                size={18}
+                className="mt-0.5 shrink-0 text-celac-green"
+              />
               <span className="min-w-0">
                 <span className="block text-celac-navy font-medium leading-snug mb-1.5">
                   {doc.title}

@@ -55,7 +55,7 @@ export default async function NoticiaPage({ params }: Props) {
 
       <article className="py-16 md:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative aspect-16/9 rounded-sm overflow-hidden bg-celac-gray mb-10">
+          <div className="relative aspect-video rounded-sm overflow-hidden bg-celac-gray mb-10">
             <Image
               src={post.image}
               alt=""

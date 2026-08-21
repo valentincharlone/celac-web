@@ -6,7 +6,12 @@ import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { NEWS, NEWS_CATEGORIES, type Locale, type NewsCategory } from "@/lib/news";
+import {
+  NEWS,
+  NEWS_CATEGORIES,
+  type Locale,
+  type NewsCategory,
+} from "@/lib/news";
 
 type Filter = "all" | NewsCategory;
 

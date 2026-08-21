@@ -99,7 +99,9 @@ export default function CountryGridSection() {
               viewport: { once: true },
               transition: { delay: i * 0.015, duration: 0.35 },
               className: `group relative rounded-sm bg-celac-gray border border-gray-200 p-4 flex flex-col items-center text-center gap-2 ${
-                url ? "hover:border-celac-green hover:bg-white transition-colors" : ""
+                url
+                  ? "hover:border-celac-green hover:bg-white transition-colors"
+                  : ""
               }`,
             };
 

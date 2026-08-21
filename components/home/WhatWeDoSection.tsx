@@ -5,7 +5,6 @@ import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import SectionEyebrow from "@/components/ui/SectionEyebrow";
 
 export default function WhatWeDoSection() {
   const t = useTranslations("home");
