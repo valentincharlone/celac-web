@@ -1,34 +1,22 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const fraunces = Fraunces({
-  subsets: ["latin"],
-  variable: "--font-fraunces",
-});
-
+/* El `<html>` vive en `app/[locale]/layout.tsx`, que es el único que conoce el
+   idioma y puede escribir `lang`. Este layout sólo aporta la metadata global. */
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "CELAC — Comunidad de Estados Latinoamericanos y Caribeños",
-    template: "%s | CELAC",
+    template: `%s | ${SITE_NAME}`,
   },
   description:
     "La Comunidad de Estados Latinoamericanos y Caribeños reúne a 33 naciones en un espacio de diálogo, cooperación y desarrollo.",
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html className={`${inter.variable} ${fraunces.variable}`}>
-      <body className="min-h-screen flex flex-col antialiased">{children}</body>
-    </html>
-  );
+}: Readonly<{ children: React.ReactNode }>) {
+  return children;
 }

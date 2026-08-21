@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { localizedAlternates, socialMetadata } from "@/lib/site";
 import PageHero from "@/components/common/PageHero";
 import NewsListSection from "@/components/news/NewsListSection";
 
@@ -6,12 +8,17 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "noticias" });
+  const title = t("title");
+  const description = t("lead");
+
   return {
-    title: t("title"),
-    description: t("lead"),
+    title,
+    description,
+    alternates: localizedAlternates(locale, "/noticias"),
+    ...socialMetadata({ locale, path: "/noticias", title, description }),
   };
 }
 

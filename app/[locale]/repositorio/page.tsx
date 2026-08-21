@@ -1,4 +1,6 @@
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { localizedAlternates, socialMetadata } from "@/lib/site";
 import { ExternalLink } from "lucide-react";
 import PageHero from "@/components/common/PageHero";
 import DocumentTableSection from "@/components/repository/DocumentTableSection";
@@ -9,12 +11,17 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "repositorio" });
+  const title = t("title");
+  const description = t("lead");
+
   return {
-    title: t("title"),
-    description: t("lead"),
+    title,
+    description,
+    alternates: localizedAlternates(locale, "/repositorio"),
+    ...socialMetadata({ locale, path: "/repositorio", title, description }),
   };
 }
 

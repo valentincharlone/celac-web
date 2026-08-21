@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { SITE_NAME, SITE_URL, localizedAlternates, socialMetadata } from "@/lib/site";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { routing } from "@/i18n/routing";
 import PageHero from "@/components/common/PageHero";
@@ -17,14 +19,27 @@ export function generateStaticParams() {
   );
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const post = getPost(slug);
   if (!post) return {};
 
+  const title = post.title[locale as Locale];
+  const description = post.excerpt[locale as Locale];
+  const path = `/noticias/${post.slug}`;
+
   return {
-    title: post.title[locale as Locale],
-    description: post.excerpt[locale as Locale],
+    title,
+    description,
+    alternates: localizedAlternates(locale, path),
+    ...socialMetadata({
+      locale,
+      path,
+      title,
+      description,
+      image: post.image,
+      type: "article",
+    }),
   };
 }
 
@@ -38,8 +53,33 @@ export default async function NoticiaPage({ params }: Props) {
   const tNav = await getTranslations({ locale, namespace: "nav" });
   const related = NEWS.filter((p) => p.slug !== post.slug).slice(0, 3);
 
+  /* `post.date` es un texto localizado ("Junio 2026"), no una fecha ISO, así
+     que la nota va sin `datePublished`: es preferible omitirlo a inventarlo. */
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: post.title[l],
+    description: post.excerpt[l],
+    image: `${SITE_URL}${post.image}`,
+    inLanguage: l,
+    mainEntityOfPage: `${SITE_URL}/${locale}/noticias/${post.slug}`,
+    articleSection: post.tag[l],
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/images/logo-celac-color.png`,
+      },
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <PageHero
         eyebrow={post.tag[l]}
         title={post.title[l]}

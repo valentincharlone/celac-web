@@ -1,4 +1,9 @@
 {
+  "site": {
+    "title": "CELAC — Comunidade de Estados Latino-Americanos e Caribenhos",
+    "description": "A CELAC reúne 33 Estados da América Latina e do Caribe num espaço de diálogo político, cooperação e integração regional. Declarações, planos de trabalho e documentos oficiais.",
+    "organizationName": "Comunidade de Estados Latino-Americanos e Caribenhos"
+  },
   "nav": {
     "home": "Início",
     "whatIsCelac": "O que é a CELAC?",

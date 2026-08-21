@@ -1,4 +1,9 @@
 {
+  "site": {
+    "title": "CELAC — Community of Latin American and Caribbean States",
+    "description": "CELAC brings together 33 States of Latin America and the Caribbean in a space for political dialogue, cooperation and regional integration. Declarations, work plans and official documents.",
+    "organizationName": "Community of Latin American and Caribbean States"
+  },
   "nav": {
     "home": "Home",
     "whatIsCelac": "What is CELAC?",

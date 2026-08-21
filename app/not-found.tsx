@@ -1,8 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Inter, Fraunces } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces" });
 
 export default function GlobalNotFound() {
   return (
+    <html lang="es" className={`${inter.variable} ${fraunces.variable}`}>
+      <body className="min-h-screen flex flex-col antialiased">
     <section className="relative bg-white min-h-screen flex items-center justify-center px-4 text-center overflow-hidden">
       <span
         aria-hidden
@@ -33,5 +39,7 @@ export default function GlobalNotFound() {
         </Link>
       </div>
     </section>
+      </body>
+    </html>
   );
 }
