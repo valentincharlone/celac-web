@@ -14,8 +14,10 @@ export default function SectionEyebrow({
       }`}
     >
       <span
+        /* Los tonos de antes no llegaban a AA: gray-400 daba 2.4:1 sobre
+           blanco y celac-green 3.2:1 sobre el navy. */
         className={`uppercase tracking-wide text-sm font-medium ${
-          tone === "dark" ? "text-celac-green" : "text-gray-400"
+          tone === "dark" ? "text-celac-green-light" : "text-gray-600"
         }`}
       >
         {children}

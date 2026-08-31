@@ -11,6 +11,11 @@
   --color-celac-green-light: #45c98d;
   --color-celac-sky: #1e9fd4;
   --color-celac-amber: #e8a838;
+  /* El ámbar de marca sobre blanco da 2.08:1 — no llega a texto accesible.
+     Esta es su versión oscura, solo para texto sobre fondos claros
+     (5.3:1 sobre blanco, 4.9:1 sobre celac-gray). El ámbar claro se queda
+     para superficies y bordes. */
+  --color-celac-amber-ink: #8f6316;
   --color-celac-gray: #f5f7fa;
 
   /* Typography */

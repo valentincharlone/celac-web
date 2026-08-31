@@ -2,13 +2,11 @@ import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { localizedAlternates, socialMetadata } from "@/lib/site";
 import PageHero from "@/components/common/PageHero";
-import CtaBanner from "@/components/common/CtaBanner";
 import MissionVisionSection from "@/components/about/MissionVisionSection";
 import PrinciplesSection from "@/components/about/PrinciplesSection";
 import HowItWorksSection from "@/components/about/HowItWorksSection";
 import TimelineSection from "@/components/about/TimelineSection";
 import PptSection from "@/components/about/PptSection";
-import ColombiaSpotlightSection from "@/components/about/ColombiaSpotlightSection";
 import AgendaSection from "@/components/about/AgendaSection";
 
 type Props = {
@@ -53,13 +51,7 @@ export default async function QueEsCelacPage({ params }: Props) {
       <HowItWorksSection />
       <TimelineSection />
       <PptSection />
-      <ColombiaSpotlightSection />
       <AgendaSection />
-      <CtaBanner
-        title={t("closingTitle")}
-        ctaLabel={t("closingCta")}
-        href={`/${locale}/paises-miembros`}
-      />
     </>
   );
 }

@@ -63,15 +63,20 @@ export default function PptSection() {
                 className="w-7 h-auto rounded-sm shrink-0 ring-1 ring-black/5"
               />
               <div className="min-w-0">
-                <p className="font-heading font-bold text-celac-navy text-sm leading-snug">
+                {/* En dos columnas a 390px, "Granadinas" sola desborda la card. */}
+                <p className="font-heading font-bold text-celac-navy text-sm leading-snug break-words">
                   {t(`${key}Country` as "ppt1Country")}
                 </p>
+                {/* El período actual se marcaba solo con color (borde y texto
+                    ámbar). Se le agrega la palabra para no depender del color,
+                    y el ámbar pasa a su versión legible sobre blanco. */}
                 <p
                   className={`text-xs font-semibold uppercase tracking-wide ${
-                    current ? "text-celac-amber" : "text-gray-400"
+                    current ? "text-celac-amber-ink" : "text-gray-500"
                   }`}
                 >
                   {years}
+                  {current && ` · ${t("pptCurrentLabel")}`}
                 </p>
               </div>
             </motion.div>
