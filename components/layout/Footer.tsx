@@ -90,7 +90,8 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-10 pt-6 text-center">
-          <p className="text-white/40 text-xs">{t("footer.rights")}</p>
+          {/* white/40 daba 3.8:1 sobre el navy del footer. */}
+          <p className="text-white/60 text-xs">{t("footer.rights")}</p>
         </div>
       </div>
     </footer>

@@ -53,7 +53,7 @@ export default function NewsSection() {
               </div>
               <div className="p-6">
                 {featured.date && (
-                  <span className="text-gray-400 text-xs">
+                  <span className="text-gray-500 text-xs">
                     {featured.date[locale]}
                   </span>
                 )}
@@ -95,7 +95,7 @@ export default function NewsSection() {
                         {item.tag[locale]}
                       </span>
                       {item.date && (
-                        <span className="text-gray-400 text-xs">
+                        <span className="text-gray-500 text-xs">
                           {item.date[locale]}
                         </span>
                       )}

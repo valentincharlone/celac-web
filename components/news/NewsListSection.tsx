@@ -37,7 +37,7 @@ export default function NewsListSection() {
               className={`relative -mb-4 pb-4 text-sm font-semibold tracking-wide uppercase transition-colors ${
                 filter === f
                   ? "text-celac-navy"
-                  : "text-gray-400 hover:text-celac-navy"
+                  : "text-gray-500 hover:text-celac-navy"
               }`}
             >
               {t(`filter_${f}` as "filter_all")}
@@ -77,7 +77,7 @@ export default function NewsListSection() {
                   {featured.tag[locale]}
                 </span>
                 {featured.date && (
-                  <span className="text-gray-400 text-xs">
+                  <span className="text-gray-500 text-xs">
                     {featured.date[locale]}
                   </span>
                 )}
@@ -133,7 +133,7 @@ export default function NewsListSection() {
                       {post.tag[locale]}
                     </span>
                     {post.date && (
-                      <span className="text-gray-400 text-xs">
+                      <span className="text-gray-500 text-xs">
                         {post.date[locale]}
                       </span>
                     )}
@@ -151,7 +151,7 @@ export default function NewsListSection() {
         </div>
 
         {posts.length === 0 && (
-          <p className="py-16 text-center text-gray-400">{t("empty")}</p>
+          <p className="py-16 text-center text-gray-500">{t("empty")}</p>
         )}
       </div>
     </section>

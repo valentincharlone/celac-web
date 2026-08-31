@@ -304,6 +304,155 @@ export const NEWS: NewsPost[] = [
     },
     signature: "Dr. Shoaib Haider — Vicepresidente Internacional de CELAC",
   },
+  {
+    slug: "septiembre-2021-cumbre-jefes-de-estado-mexico",
+    category: "noticias",
+    image: "/images/news-cumbre-mexico-2021.jpg",
+    tag: { es: "Cumbres", en: "Summits", pt: "Cúpulas" },
+    date: { es: "Septiembre 2021", en: "September 2021", pt: "Setembro de 2021" },
+    title: {
+      es: "VI Cumbre de Jefes de Estado de la CELAC — Ciudad de México",
+      en: "6th CELAC Summit of Heads of State — Mexico City",
+      pt: "VI Cúpula de Chefes de Estado da CELAC — Cidade do México",
+    },
+    excerpt: {
+      es: "Tras dos años de suspensión por la pandemia, la CELAC volvió a reunirse de forma presencial y aprobó por unanimidad un plan de autosuficiencia sanitaria para la región.",
+      en: "After two years suspended by the pandemic, CELAC met in person again and unanimously approved a health self-sufficiency plan for the region.",
+      pt: "Após dois anos de suspensão pela pandemia, a CELAC voltou a reunir-se presencialmente e aprovou por unanimidade um plano de autossuficiência sanitária para a região.",
+    },
+    body: {
+      es: [
+        "La VI Cumbre de la Comunidad de Estados Latinoamericanos y Caribeños (CELAC) se llevó a cabo el 18 de este mes, con la particularidad de que, tras dos años de suspensión debido a la pandemia de COVID-19, se realizó de forma presencial.",
+        "El presidente de México, Andrés Manuel López Obrador, planteó en la reunión el interés de que la CELAC promueva la unidad en el continente y fortalezca la capacidad de negociación de la región frente a otros bloques económicos, así como con Estados Unidos y Canadá.",
+        "Los países miembros de la CELAC aprobaron por unanimidad las líneas de acción y propuestas para un plan de autosuficiencia en materia de salud en América Latina y el Caribe, una hoja de ruta programática presentada por la Comisión Económica para América Latina y el Caribe (CEPAL), para fortalecer la producción y distribución de medicamentos, especialmente vacunas, en los países de la región y reducir la dependencia externa. Asimismo, otorgaron a la comisión regional de las Naciones Unidas el mandato para impulsar acciones que garanticen su efectiva implementación.",
+        "La mayoría de los Estados miembros están elaborando planes para lograr la autosuficiencia alimentaria mediante la modernización de la maquinaria y el equipo agrícola.",
+        "El presidente de México exhortó a los países a “poner fin a la inacción y proponer una relación nueva y dinámica entre los pueblos de América”. Asimismo, instó a Estados Unidos y Canadá a proporcionar vacunas a los países de la región que no han podido proteger a su población de la COVID-19 por falta de recursos económicos, y solicitó a la CEPAL y a otras organizaciones multilaterales que elaboren un plan con el objetivo primordial de promover la comunidad económica de América Latina y el Caribe, aprovechando así la riqueza natural y cultural de la región.",
+      ],
+      en: [
+        "The 6th Summit of the Community of Latin American and Caribbean States (CELAC) was held on the 18th of this month and, after two years suspended because of the COVID-19 pandemic, it took place in person.",
+        "Mexico's president, Andrés Manuel López Obrador, put forward at the meeting the interest in CELAC promoting unity across the continent and strengthening the region's bargaining power vis-à-vis other economic blocs, as well as with the United States and Canada.",
+        "CELAC member states unanimously approved the lines of action and proposals for a health self-sufficiency plan for Latin America and the Caribbean, a programmatic roadmap presented by the Economic Commission for Latin America and the Caribbean (ECLAC) to strengthen the production and distribution of medicines — vaccines above all — in the countries of the region and to reduce external dependence. They also gave the United Nations regional commission the mandate to drive the actions needed to ensure its effective implementation.",
+        "Most member states are drawing up plans to achieve food self-sufficiency by modernising agricultural machinery and equipment.",
+        "Mexico's president urged countries to “put an end to inaction and propose a new, dynamic relationship among the peoples of the Americas”. He also called on the United States and Canada to provide vaccines to countries in the region that have been unable to protect their population from COVID-19 for lack of financial resources, and asked ECLAC and other multilateral organisations to draw up a plan whose primary aim is to promote the economic community of Latin America and the Caribbean, drawing on the region's natural and cultural wealth.",
+      ],
+      pt: [
+        "A VI Cúpula da Comunidade de Estados Latino-Americanos e Caribenhos (CELAC) foi realizada no dia 18 deste mês, com a particularidade de que, após dois anos de suspensão devido à pandemia de COVID-19, aconteceu de forma presencial.",
+        "O presidente do México, Andrés Manuel López Obrador, apresentou na reunião o interesse de que a CELAC promova a unidade no continente e fortaleça a capacidade de negociação da região frente a outros blocos econômicos, assim como com os Estados Unidos e o Canadá.",
+        "Os países membros da CELAC aprovaram por unanimidade as linhas de ação e propostas para um plano de autossuficiência em matéria de saúde na América Latina e no Caribe, um roteiro programático apresentado pela Comissão Econômica para a América Latina e o Caribe (CEPAL), para fortalecer a produção e a distribuição de medicamentos, especialmente vacinas, nos países da região e reduzir a dependência externa. Também outorgaram à comissão regional das Nações Unidas o mandato para impulsionar ações que garantam a sua efetiva implementação.",
+        "A maioria dos Estados membros está elaborando planos para alcançar a autossuficiência alimentar por meio da modernização do maquinário e dos equipamentos agrícolas.",
+        "O presidente do México exortou os países a “pôr fim à inação e propor uma relação nova e dinâmica entre os povos da América”. Também instou os Estados Unidos e o Canadá a fornecerem vacinas aos países da região que não puderam proteger a sua população da COVID-19 por falta de recursos econômicos, e solicitou à CEPAL e a outras organizações multilaterais que elaborem um plano com o objetivo primordial de promover a comunidade econômica da América Latina e do Caribe, aproveitando assim a riqueza natural e cultural da região.",
+      ],
+    },
+    signature: "Orlando Sotolongo Santana — Presidente",
+  },
+  {
+    slug: "vision-celac-2035",
+    category: "boletines",
+    image: "/images/hero-map.png",
+    tag: { es: "Proyectos", en: "Projects", pt: "Projetos" },
+    title: {
+      es: "Visión CELAC 2035",
+      en: "CELAC Vision 2035",
+      pt: "Visão CELAC 2035",
+    },
+    excerpt: {
+      es: "Una hoja de ruta de proyectos de infraestructura y educación pensada para llevar a los Estados miembros al nivel de los países desarrollados.",
+      en: "A roadmap of infrastructure and education projects designed to bring member States up to the level of developed countries.",
+      pt: "Um roteiro de projetos de infraestrutura e educação pensado para levar os Estados membros ao nível dos países desenvolvidos.",
+    },
+    body: {
+      es: [
+        "Esta visión, que se materializará mediante la implementación de los proyectos que se detallan a continuación, elaborados por nuestro equipo de expertos, académicos y especialistas en sus respectivos campos, impulsará a los Estados miembros de la CELAC al nivel de los países desarrollados. Recordemos siempre que, por primera vez en 200 años, estamos escribiendo nuestra historia.",
+        "Una línea de tren de alta velocidad. Esto conectará nuestra frontera norte, México, con nuestra frontera sur, Argentina, y modernizará el transporte ferroviario. Planeamos implementar servicios similares en nuestras islas del Caribe, conectando el este con el oeste y el sur con el norte.",
+        "Bolívar el Conquistador: modernización del sistema educativo y sus equipos. Planeamos implementar un sistema educativo avanzado equipado con tecnología de punta. Cada estudiante, desde primaria hasta la universidad, contará con una tableta y una computadora portátil con todos los libros y materiales necesarios, y estará conectado con sus profesores las 24 horas. De esta manera, garantizaremos que nuestra futura juventud tenga igualdad de oportunidades educativas dondequiera que las necesite y dondequiera que se encuentre. Nuestros estudiantes merecen lo mejor y nuestra misión es brindarles las mejores herramientas.",
+      ],
+      en: [
+        "This vision, which will take shape through the projects set out below — drawn up by our team of experts, academics and specialists in their respective fields — will bring CELAC member States up to the level of developed countries. Let us always remember that, for the first time in 200 years, we are writing our own history.",
+        "A high-speed rail line. It will connect our northern border, Mexico, with our southern border, Argentina, and modernise rail transport. We plan to roll out similar services across our Caribbean islands, connecting east with west and south with north.",
+        "Bolívar the Conqueror: modernising the education system and its equipment. We plan to put in place an advanced education system equipped with cutting-edge technology. Every student, from primary school through university, will have a tablet and a laptop with all the books and materials they need, and will be connected to their teachers around the clock. This is how we will ensure that our future young people have equal educational opportunities wherever they need them and wherever they are. Our students deserve the best, and our mission is to give them the best tools.",
+      ],
+      pt: [
+        "Esta visão, que se materializará por meio da implementação dos projetos detalhados a seguir, elaborados pela nossa equipe de especialistas, acadêmicos e profissionais em seus respectivos campos, levará os Estados membros da CELAC ao nível dos países desenvolvidos. Lembremos sempre que, pela primeira vez em 200 anos, estamos escrevendo a nossa história.",
+        "Uma linha de trem de alta velocidade. Conectará a nossa fronteira norte, o México, com a nossa fronteira sul, a Argentina, e modernizará o transporte ferroviário. Planejamos implementar serviços semelhantes nas nossas ilhas do Caribe, conectando o leste com o oeste e o sul com o norte.",
+        "Bolívar o Conquistador: modernização do sistema educativo e dos seus equipamentos. Planejamos implementar um sistema educativo avançado equipado com tecnologia de ponta. Cada estudante, do ensino fundamental à universidade, contará com um tablet e um computador portátil com todos os livros e materiais necessários, e estará conectado com os seus professores 24 horas por dia. Dessa maneira, garantiremos que a nossa futura juventude tenha igualdade de oportunidades educativas onde quer que precise delas e onde quer que esteja. Os nossos estudantes merecem o melhor e a nossa missão é oferecer-lhes as melhores ferramentas.",
+      ],
+    },
+    signature: "Necdet Hincal — Vicepresidente",
+  },
+  {
+    slug: "programa-hambre-cero",
+    category: "boletines",
+    image: "/images/bg-2.jpg",
+    tag: { es: "Desarrollo social", en: "Social development", pt: "Desenvolvimento social" },
+    title: {
+      es: "El programa brasileño “Hambre Cero” como modelo para reducir la pobreza en la comunidad",
+      en: "Brazil's “Zero Hunger” programme as a model for reducing poverty in the community",
+      pt: "O programa brasileiro “Fome Zero” como modelo para reduzir a pobreza na comunidade",
+    },
+    excerpt: {
+      es: "El plan que sacó a más de 35 millones de brasileños de la pobreza extrema inspira un proyecto regional de alimentación, empleo agrícola e ingresos.",
+      en: "The plan that lifted more than 35 million Brazilians out of extreme poverty inspires a regional project on food, farm employment and incomes.",
+      pt: "O plano que tirou mais de 35 milhões de brasileiros da pobreza extrema inspira um projeto regional de alimentação, emprego agrícola e renda.",
+    },
+    body: {
+      es: [
+        "Cuando el expresidente brasileño Lula fue elegido, presentó un plan llamado «Hambre Cero» que, en muy poco tiempo, logró que más de 35 millones de brasileños salieran de la pobreza extrema y ascendieran a la clase media. Este plan sirvió de gran inspiración para muchos otros Estados miembros de la CELAC.",
+        "Estamos planeando presentar un proyecto inspirado en el programa Hambre Cero de Brasil, con la esperanza de que no solo nos ayude a proporcionar la alimentación necesaria, sino también a aumentar los ingresos de nuestra población y a crear empleos en el sector agrícola. Ayudaremos a nuestras pequeñas y medianas empresas agrícolas y a nuestros agricultores a obtener maquinaria y herramientas agrícolas a precios asequibles, reduciendo así los costos de producción tanto para ellos como para los consumidores.",
+      ],
+      en: [
+        "When former Brazilian president Lula was elected, he introduced a plan called “Zero Hunger” which, in a very short time, lifted more than 35 million Brazilians out of extreme poverty and into the middle class. That plan was a great source of inspiration for many other CELAC member States.",
+        "We are planning to put forward a project inspired by Brazil's Zero Hunger programme, in the hope that it will not only help us provide the food that is needed, but also raise our population's incomes and create jobs in the agricultural sector. We will help our small and medium-sized farming businesses and our farmers to obtain agricultural machinery and tools at affordable prices, thereby lowering production costs both for them and for consumers.",
+      ],
+      pt: [
+        "Quando o ex-presidente brasileiro Lula foi eleito, apresentou um plano chamado «Fome Zero» que, em muito pouco tempo, conseguiu que mais de 35 milhões de brasileiros saíssem da pobreza extrema e ascendessem à classe média. Esse plano serviu de grande inspiração para muitos outros Estados membros da CELAC.",
+        "Estamos planejando apresentar um projeto inspirado no programa Fome Zero do Brasil, na esperança de que não apenas nos ajude a fornecer a alimentação necessária, mas também a aumentar a renda da nossa população e a criar empregos no setor agrícola. Ajudaremos as nossas pequenas e médias empresas agrícolas e os nossos agricultores a obter maquinário e ferramentas agrícolas a preços acessíveis, reduzindo assim os custos de produção tanto para eles quanto para os consumidores.",
+      ],
+    },
+    signature: "Juana S. Jerena — Presidente",
+  },
+  {
+    slug: "comunidad-siglo-xxi",
+    category: "boletines",
+    image: "/images/action-politica.png",
+    tag: { es: "Institucional", en: "Institutional", pt: "Institucional" },
+    title: {
+      es: "La Comunidad de Estados Latinoamericanos y Caribeños en el siglo XXI",
+      en: "The Community of Latin American and Caribbean States in the 21st century",
+      pt: "A Comunidade de Estados Latino-Americanos e Caribenhos no século XXI",
+    },
+    excerpt: {
+      es: "Un mecanismo creado para representar, promover y proteger los intereses de los Estados miembros de la CELAC y de sus ciudadanos, dentro y fuera de la región.",
+      en: "A mechanism created to represent, promote and protect the interests of CELAC member States and their citizens, inside and outside the region.",
+      pt: "Um mecanismo criado para representar, promover e proteger os interesses dos Estados membros da CELAC e dos seus cidadãos, dentro e fora da região.",
+    },
+    body: {
+      es: [
+        "Nuestra organización es un mecanismo creado para representar, promover y proteger los intereses de los miembros de la Comunidad de Estados Latinoamericanos y Caribeños (CELAC) y sus ciudadanos. Este mecanismo y el proyecto se inspiran en el comandante Hugo Chávez Frías de Venezuela, quien dedicó su vida a la prosperidad y el bienestar de los pueblos de América Latina y el Caribe, y en Fidel Castro Ruz.",
+        "Creemos que la CELAC trasciende las ideas políticas convencionales de izquierda y derecha. Representa la justicia social y la igualdad deseadas por y para los pueblos de esta comunidad de naciones, y esperamos que sirva de modelo para los pueblos de otras regiones. No queremos ver a los habitantes de nuestras comunidades necesitados de ropa y alimentos básicos, cuando bajo sus tierras abundan los minerales y los recursos naturales. Nuestros proyectos se crean para contribuir a mejorar la vida de los ciudadanos de la CELAC, tanto dentro como fuera de la zona de la CELAC.",
+        "El mecanismo de CELAC International reúne a la Misión CELAC, la ONG de la CELAC creada oficialmente en abril de 2012, y a CELAC International, empresa de comercio, gestión de proyectos y consultoría creada en 2013 para representar, proteger y apoyar mejor los intereses de la Comunidad de Estados Latinoamericanos y Caribeños y sus ciudadanos, así como a Médicos por la Humanidad Internacional, creada por médicos egresados de la Escuela de Medicina de Cuba.",
+        "Para promover y proteger los intereses de la CELAC, trabajaremos en conjunto con la administración oficial de la CELAC, incluyendo nuestras misiones en los países donde prestaremos nuestros servicios. Para concretar nuestra visión, estableceremos oficinas en diversos países, comenzando por Canadá, Estados Unidos, Turquía, Sultanato de Omán, Corea, Arabia Saudita, Irán, Federación Rusa, China y Etiopía. Nuestras sedes estarán ubicadas en La Habana (Cuba) y Caracas (Venezuela).",
+        "A través de nuestras oficinas, brindaremos información y asistencia a nuestros ciudadanos. Estaremos con y para nuestros ciudadanos dondequiera que estén. Nuestro plan consiste en llevar a la Comunidad de Estados Latinoamericanos y Caribeños al nivel de las naciones avanzadas mediante proyectos de desarrollo que están siendo preparados por nuestros expertos y especialistas en sus respectivos campos, como la salud y la infraestructura.",
+        "Haremos del siglo XXI el «Siglo de la Comunidad de Estados Latinoamericanos y Caribeños». Aspiramos a ser un modelo de esperanza, inspiración y motivación para todas las naciones en desarrollo. Estamos listos y encantados de compartir nuestros éxitos y experiencias con todas las naciones, con respeto, sin importar su origen étnico, religioso o social.",
+      ],
+      en: [
+        "Our organisation is a mechanism created to represent, promote and protect the interests of the members of the Community of Latin American and Caribbean States (CELAC) and their citizens. This mechanism and the project are inspired by Commander Hugo Chávez Frías of Venezuela, who devoted his life to the prosperity and well-being of the peoples of Latin America and the Caribbean, and by Fidel Castro Ruz.",
+        "We believe that CELAC goes beyond the conventional political ideas of left and right. It stands for the social justice and equality sought by and for the peoples of this community of nations, and we hope it will serve as a model for peoples in other regions. We do not want to see the inhabitants of our communities in need of clothing and basic food when minerals and natural resources abound beneath their land. Our projects are created to help improve the lives of CELAC citizens, both inside and outside the CELAC area.",
+        "The CELAC International mechanism brings together the CELAC Mission — the CELAC NGO officially created in April 2012 — and CELAC International, a trade, project management and consultancy company created in 2013 to better represent, protect and support the interests of the Community of Latin American and Caribbean States and its citizens, as well as Doctors for Humanity International, created by doctors who graduated from Cuba's School of Medicine.",
+        "To promote and protect CELAC's interests, we will work together with CELAC's official administration, including our missions in the countries where we will provide our services. To realise our vision, we will set up offices in a number of countries, starting with Canada, the United States, Türkiye, the Sultanate of Oman, Korea, Saudi Arabia, Iran, the Russian Federation, China and Ethiopia. Our headquarters will be located in Havana (Cuba) and Caracas (Venezuela).",
+        "Through our offices, we will provide information and assistance to our citizens. We will be with and for our citizens wherever they are. Our plan is to bring the Community of Latin American and Caribbean States up to the level of advanced nations through development projects being prepared by our experts and specialists in their respective fields, such as health and infrastructure.",
+        "We will make the 21st century the “Century of the Community of Latin American and Caribbean States”. We aspire to be a model of hope, inspiration and motivation for all developing nations. We are ready and glad to share our successes and experiences with all nations, with respect, regardless of their ethnic, religious or social background.",
+      ],
+      pt: [
+        "A nossa organização é um mecanismo criado para representar, promover e proteger os interesses dos membros da Comunidade de Estados Latino-Americanos e Caribenhos (CELAC) e dos seus cidadãos. Este mecanismo e o projeto inspiram-se no comandante Hugo Chávez Frías, da Venezuela, que dedicou a sua vida à prosperidade e ao bem-estar dos povos da América Latina e do Caribe, e em Fidel Castro Ruz.",
+        "Acreditamos que a CELAC transcende as ideias políticas convencionais de esquerda e direita. Representa a justiça social e a igualdade desejadas pelos e para os povos desta comunidade de nações, e esperamos que sirva de modelo para os povos de outras regiões. Não queremos ver os habitantes das nossas comunidades necessitados de roupa e alimentos básicos, quando sob as suas terras abundam os minerais e os recursos naturais. Os nossos projetos são criados para contribuir para melhorar a vida dos cidadãos da CELAC, tanto dentro quanto fora da zona da CELAC.",
+        "O mecanismo da CELAC International reúne a Missão CELAC, a ONG da CELAC criada oficialmente em abril de 2012, e a CELAC International, empresa de comércio, gestão de projetos e consultoria criada em 2013 para representar, proteger e apoiar melhor os interesses da Comunidade de Estados Latino-Americanos e Caribenhos e dos seus cidadãos, bem como os Médicos pela Humanidade Internacional, criada por médicos formados pela Escola de Medicina de Cuba.",
+        "Para promover e proteger os interesses da CELAC, trabalharemos em conjunto com a administração oficial da CELAC, incluindo as nossas missões nos países onde prestaremos os nossos serviços. Para concretizar a nossa visão, estabeleceremos escritórios em diversos países, começando pelo Canadá, Estados Unidos, Turquia, Sultanato de Omã, Coreia, Arábia Saudita, Irã, Federação Russa, China e Etiópia. As nossas sedes estarão localizadas em Havana (Cuba) e Caracas (Venezuela).",
+        "Por meio dos nossos escritórios, forneceremos informação e assistência aos nossos cidadãos. Estaremos com e para os nossos cidadãos onde quer que estejam. O nosso plano consiste em levar a Comunidade de Estados Latino-Americanos e Caribenhos ao nível das nações avançadas por meio de projetos de desenvolvimento que estão sendo preparados pelos nossos especialistas nos seus respectivos campos, como a saúde e a infraestrutura.",
+        "Faremos do século XXI o «Século da Comunidade de Estados Latino-Americanos e Caribenhos». Aspiramos a ser um modelo de esperança, inspiração e motivação para todas as nações em desenvolvimento. Estamos prontos e felizes por compartilhar os nossos êxitos e experiências com todas as nações, com respeito, sem importar a sua origem étnica, religiosa ou social.",
+      ],
+    },
+    signature: "Ricardo Cerda Bautista — Vicepresidente",
+  },
 ];
 
 export function getPost(slug: string) {

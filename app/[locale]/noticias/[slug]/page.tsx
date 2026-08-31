@@ -107,7 +107,7 @@ export default async function NoticiaPage({ params }: Props) {
           </div>
 
           {post.date && (
-            <p className="text-gray-400 text-sm mb-8 pb-8 border-b border-gray-200">
+            <p className="text-gray-500 text-sm mb-8 pb-8 border-b border-gray-200">
               {post.date[l]}
             </p>
           )}
@@ -171,7 +171,9 @@ export default async function NoticiaPage({ params }: Props) {
                 <h3 className="font-heading font-bold text-celac-navy leading-snug mt-2 group-hover:text-celac-green transition-colors">
                   {item.title[l]}
                 </h3>
-                <span className="mt-3 inline-flex items-center gap-1.5 text-gray-400 text-sm group-hover:text-celac-navy transition-colors">
+                {/* gray-600 y no gray-500: el fondo acá es celac-gray, donde
+                    gray-500 se queda en 4.51 y roza el mínimo de AA. */}
+                <span className="mt-3 inline-flex items-center gap-1.5 text-gray-600 text-sm group-hover:text-celac-navy transition-colors">
                   {t("readMore")}
                   <ArrowRight size={13} />
                 </span>

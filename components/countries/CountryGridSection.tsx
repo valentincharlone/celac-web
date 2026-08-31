@@ -63,7 +63,9 @@ const COUNTRIES = [
   { key: "c20", Flag: JM, url: "https://www.gov.jm/" },
   { key: "c21", Flag: MX, url: "https://www.gob.mx/" },
   { key: "c22", Flag: NI, url: undefined },
-  { key: "c23", Flag: PA, url: "https://portalunico.gob.pa/" },
+  // portalunico.gob.pa dejó de resolver (2026-08-31); Presidencia sigue en pie
+  // y es el patrón que ya usan Costa Rica, Cuba, El Salvador y Honduras.
+  { key: "c23", Flag: PA, url: "https://www.presidencia.gob.pa/" },
   { key: "c24", Flag: PY, url: "https://www.paraguay.gov.py/" },
   { key: "c25", Flag: PE, url: "https://www.gob.pe/" },
   { key: "c26", Flag: DO, url: "https://www.gob.do/" },
@@ -88,6 +90,9 @@ export default function CountryGridSection() {
             {t("gridTitle")}
           </h2>
           <p className="text-gray-500 leading-relaxed">{t("gridLead")}</p>
+          {/* Dice que las tarjetas llevan bandera y enlace al gobierno: es lo
+              único que anticipa que son clicables. */}
+          <p className="text-gray-500 leading-relaxed mt-3">{t("gridNote")}</p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -129,7 +134,7 @@ export default function CountryGridSection() {
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${name} — sitio oficial de gobierno, se abre en una pestaña nueva`}
+                aria-label={t("gridLinkAria", { country: name })}
                 {...cardProps}
               >
                 {content}

@@ -51,7 +51,7 @@ export default function DocumentTableSection() {
           <div className="relative flex-1">
             <Search
               size={16}
-              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400"
+              className="absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-500"
             />
             <input
               type="search"
@@ -59,7 +59,7 @@ export default function DocumentTableSection() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder={t("searchPlaceholder")}
               aria-label={t("searchPlaceholder")}
-              className="w-full h-11 pl-10 pr-3 rounded-sm border border-gray-200 bg-white text-sm text-celac-navy placeholder:text-gray-400 focus:outline-none focus:border-celac-green transition-colors"
+              className="w-full h-11 pl-10 pr-3 rounded-sm border border-gray-200 bg-white text-sm text-celac-navy placeholder:text-gray-500 focus:outline-none focus:border-celac-green transition-colors"
             />
           </div>
 
@@ -92,7 +92,7 @@ export default function DocumentTableSection() {
           </select>
         </div>
 
-        <div className="flex items-center justify-between gap-4 mb-8 text-sm text-gray-400">
+        <div className="flex items-center justify-between gap-4 mb-8 text-sm text-gray-500">
           <span>{t("results", { count: results.length })}</span>
           {isFiltered && (
             <button
@@ -153,7 +153,7 @@ export default function DocumentTableSection() {
                       {t(`cat_${doc.category}` as "cat_declaraciones")}
                     </span>
                   </td>
-                  <td className="py-4 px-4 text-gray-400 text-sm whitespace-nowrap">
+                  <td className="py-4 px-4 text-gray-500 text-sm whitespace-nowrap">
                     {doc.size}
                   </td>
                   <td className="py-4 pl-4">
@@ -191,7 +191,7 @@ export default function DocumentTableSection() {
                 <span className="block text-celac-navy font-medium leading-snug mb-1.5">
                   {doc.title}
                 </span>
-                <span className="block text-xs text-gray-400">
+                <span className="block text-xs text-gray-500">
                   {[
                     doc.year,
                     t(`cat_${doc.category}` as "cat_declaraciones"),
@@ -210,7 +210,7 @@ export default function DocumentTableSection() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="py-16 text-center text-gray-400"
+            className="py-16 text-center text-gray-500"
           >
             {t("empty")}
           </motion.p>
