@@ -6,8 +6,21 @@ import { Loader2, Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 type Status = "idle" | "loading" | "success" | "error";
 
+/* placeholder en gray-600 y no gray-500: el input va sobre celac-gray, donde
+   gray-500 se queda en 4.51 y roza el mínimo de AA. */
 const inputClass =
-  "w-full rounded-sm border border-gray-200 bg-celac-gray px-4 py-3 text-sm text-celac-navy placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-celac-green/40 focus:border-celac-green transition-colors";
+  "w-full rounded-sm border border-gray-200 bg-celac-gray px-4 py-3 text-sm text-celac-navy placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-celac-green/40 focus:border-celac-green transition-colors";
+
+/* El `placeholder` solo no alcanza como etiqueta: desaparece al escribir y no
+   es un nombre accesible fiable. Cada campo lleva su <label> en sr-only, con
+   el mismo texto, y el `required` nativo se encarga de anunciar cuáles son
+   obligatorios. */
+const FIELDS = [
+  { name: "name", id: "contact-name", type: "text", label: "fieldName", required: true },
+  { name: "phone", id: "contact-phone", type: "tel", label: "fieldPhone", required: false },
+  { name: "email", id: "contact-email", type: "email", label: "fieldEmail", required: true },
+  { name: "subject", id: "contact-subject", type: "text", label: "fieldSubject", required: false },
+] as const;
 
 export default function ContactForm() {
   const t = useTranslations("contacto");
@@ -44,8 +57,13 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-sm border border-celac-green/30 bg-celac-green/5 p-8 flex flex-col items-center text-center gap-3">
-        <CheckCircle2 className="text-celac-green" size={32} />
+      // role="status": el formulario desaparece y sin esto el cambio no se
+      // anuncia a quien no ve la pantalla.
+      <div
+        role="status"
+        className="rounded-sm border border-celac-green/30 bg-celac-green/5 p-8 flex flex-col items-center text-center gap-3"
+      >
+        <CheckCircle2 className="text-celac-green" size={32} aria-hidden />
         <p className="font-heading font-bold text-celac-navy text-lg">
           {t("successTitle")}
         </p>
@@ -55,46 +73,51 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form
+      onSubmit={handleSubmit}
+      aria-busy={status === "loading"}
+      className="space-y-4"
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <input
-          name="name"
-          type="text"
+        {FIELDS.map(({ name, id, type, label, required }) => (
+          <div key={name}>
+            <label htmlFor={id} className="sr-only">
+              {t(label)}
+            </label>
+            <input
+              id={id}
+              name={name}
+              type={type}
+              required={required}
+              autoComplete={
+                { name: "name", phone: "tel", email: "email", subject: "off" }[
+                  name
+                ]
+              }
+              placeholder={t(label)}
+              className={inputClass}
+            />
+          </div>
+        ))}
+      </div>
+
+      <div>
+        <label htmlFor="contact-message" className="sr-only">
+          {t("fieldMessage")}
+        </label>
+        <textarea
+          id="contact-message"
+          name="message"
           required
-          placeholder={t("fieldName")}
-          className={inputClass}
-        />
-        <input
-          name="phone"
-          type="tel"
-          placeholder={t("fieldPhone")}
-          className={inputClass}
-        />
-        <input
-          name="email"
-          type="email"
-          required
-          placeholder={t("fieldEmail")}
-          className={inputClass}
-        />
-        <input
-          name="subject"
-          type="text"
-          placeholder={t("fieldSubject")}
-          className={inputClass}
+          rows={5}
+          placeholder={t("fieldMessage")}
+          className={`${inputClass} resize-none`}
         />
       </div>
-      <textarea
-        name="message"
-        required
-        rows={5}
-        placeholder={t("fieldMessage")}
-        className={`${inputClass} resize-none`}
-      />
 
       {status === "error" && (
-        <p className="flex items-center gap-2 text-sm text-red-600">
-          <AlertCircle size={15} />
+        <p role="alert" className="flex items-center gap-2 text-sm text-red-700">
+          <AlertCircle size={15} aria-hidden />
           {t("errorBody")}
         </p>
       )}
@@ -106,13 +129,13 @@ export default function ContactForm() {
       >
         {status === "loading" ? (
           <>
-            <Loader2 size={16} className="animate-spin" />
+            <Loader2 size={16} className="animate-spin" aria-hidden />
             {t("submitting")}
           </>
         ) : (
           <>
             {t("submit")}
-            <Send size={16} />
+            <Send size={16} aria-hidden />
           </>
         )}
       </button>

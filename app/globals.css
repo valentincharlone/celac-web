@@ -37,6 +37,16 @@ body {
   font-family: var(--font-sans);
 }
 
+/* Leaflet pinta los enlaces de su atribución en #0078A8, que sobre el fondo
+   blanco del control da 3.6:1. Es texto legal y tiene que ser legible. Hace
+   falta el `.leaflet-container` delante: la hoja de Leaflet se importa desde el
+   componente cliente, o sea después de esta, y con la misma especificidad
+   ganaría por orden. */
+.leaflet-container .leaflet-control-attribution,
+.leaflet-container .leaflet-control-attribution a {
+  color: #3d4655;
+}
+
 /* Utility: clip-path diagonal para secciones hero */
 .clip-diagonal {
   clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
