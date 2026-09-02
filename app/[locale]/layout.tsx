@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "../globals.css";
 import { Inter, Fraunces } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";

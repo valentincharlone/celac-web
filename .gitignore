@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# payload — archivos subidos en local (en producción van a blob storage)
+/uploads
+
 # vercel
 .vercel
 
