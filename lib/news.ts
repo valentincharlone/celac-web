@@ -117,7 +117,7 @@ export const NEWS: NewsPost[] = [
   {
     slug: "iv-cumbre-celac-ue",
     category: "boletines",
-    image: "/images/lqh-banderas.jpg",
+    image: "/images/news-cumbre-celac-ue.jpg",
     tag: { es: "CELAC – UE", en: "CELAC – EU", pt: "CELAC – UE" },
     date: { es: "Noviembre 2025", en: "November 2025", pt: "Novembro de 2025" },
     title: {
@@ -154,7 +154,7 @@ export const NEWS: NewsPost[] = [
   {
     slug: "celac-liga-de-estados-arabes",
     category: "boletines",
-    image: "/images/hero-slider1.png",
+    image: "/images/news-estados-arabes.jpg",
     tag: { es: "Vocería", en: "Advocacy", pt: "Vocalização" },
     title: {
       es: "Próxima reunión: CELAC y Liga de Estados Árabes",
