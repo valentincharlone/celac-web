@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { SITE_URL } from "@/lib/site";
-import { NEWS } from "@/lib/news";
+import { getNewsPosts } from "@/lib/cms/news";
 
 /* Rutas estáticas con su prioridad relativa. El slug de noticia se agrega
    aparte, más abajo. */
@@ -21,7 +21,7 @@ function languageAlternates(path: string) {
   );
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const lastModified = new Date();
 
   const pages = ROUTES.flatMap(({ path, priority, changeFrequency }) =>
@@ -34,7 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  const news = NEWS.flatMap((post) =>
+  const news = (await getNewsPosts()).flatMap((post) =>
     routing.locales.map((locale) => ({
       url: `${SITE_URL}/${locale}/noticias/${post.slug}`,
       lastModified,

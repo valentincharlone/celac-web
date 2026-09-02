@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { localizedAlternates, socialMetadata } from "@/lib/site";
 import PageHero from "@/components/common/PageHero";
 import NewsListSection from "@/components/news/NewsListSection";
+import { getNewsPosts } from "@/lib/cms/news";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -26,6 +27,7 @@ export default async function NoticiasPage({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "noticias" });
   const tNav = await getTranslations({ locale, namespace: "nav" });
+  const posts = await getNewsPosts();
 
   return (
     <>
@@ -40,7 +42,7 @@ export default async function NoticiasPage({ params }: Props) {
           { label: t("title") },
         ]}
       />
-      <NewsListSection />
+      <NewsListSection posts={posts} />
     </>
   );
 }

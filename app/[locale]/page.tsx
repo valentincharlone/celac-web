@@ -6,15 +6,18 @@ import ActionLinesSection from "@/components/home/ActionLinesSection";
 import NewsSection from "@/components/home/NewsSection";
 import FaqSection from "@/components/home/FaqSection";
 import ClosingSection from "@/components/home/ClosingSection";
+import { getNewsPosts } from "@/lib/cms/news";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const posts = await getNewsPosts();
+
   return (
     <>
       <HeroSection />
       <AboutSection />
       <WhatWeDoSection />
       <MissionSection />
-      <NewsSection />
+      <NewsSection posts={posts} />
       <ActionLinesSection />
       <FaqSection />
       <ClosingSection />

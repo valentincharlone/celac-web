@@ -6,23 +6,22 @@ import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import {
-  NEWS,
-  NEWS_CATEGORIES,
-  type Locale,
-  type NewsCategory,
-} from "@/lib/news";
+import { NEWS_CATEGORIES, type Locale, type NewsCategory } from "@/lib/news";
+import type { CmsNewsPost } from "@/lib/cms/news";
 
 type Filter = "all" | NewsCategory;
 
 const FILTERS: Filter[] = ["all", ...NEWS_CATEGORIES];
 
-export default function NewsListSection() {
+/* Las notas llegan por props: un client component no puede consultar el CMS, así
+   que el fetch lo hace la página (server component) y acá sólo queda el estado del
+   filtro. */
+export default function NewsListSection({ posts: allPosts }: { posts: CmsNewsPost[] }) {
   const t = useTranslations("noticias");
   const locale = useLocale() as Locale;
   const [filter, setFilter] = useState<Filter>("all");
 
-  const posts = NEWS.filter((p) => filter === "all" || p.category === filter);
+  const posts = allPosts.filter((p) => filter === "all" || p.category === filter);
   const [featured, ...rest] = posts;
 
   return (

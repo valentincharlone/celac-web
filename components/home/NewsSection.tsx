@@ -5,12 +5,17 @@ import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { NEWS, type Locale } from "@/lib/news";
+import { type Locale } from "@/lib/news";
+import type { CmsNewsPost } from "@/lib/cms/news";
 
-export default function NewsSection() {
+export default function NewsSection({ posts }: { posts: CmsNewsPost[] }) {
   const t = useTranslations("home");
   const locale = useLocale() as Locale;
-  const [featured, ...rest] = NEWS.slice(0, 3);
+  const [featured, ...rest] = posts.slice(0, 3);
+
+  /* Con el contenido en el CMS la lista puede venir vacía — antes el array estaba
+     hardcodeado y eso no podía pasar. Sin nota destacada no hay sección. */
+  if (!featured) return null;
 
   return (
     <section className="py-20 md:py-28 bg-celac-gray">

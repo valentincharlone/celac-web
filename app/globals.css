@@ -55,3 +55,67 @@ body {
 .max-w-8xl {
   max-width: 90rem;
 }
+/* El cuerpo de las notas viene de Lexical y puede traer subtítulos, listas, citas
+   y links que el contenido plano anterior no tenía. El preflight de Tailwind los
+   deja sin estilo, así que hay que devolvérselo. `.payload-richtext` es el wrapper
+   que escribe el componente <RichText> de Payload — por eso los estilos no pueden
+   ir como utilidades en el contenedor: quedarían separados por ese div. */
+.payload-richtext > * + * {
+  margin-top: 1.5rem;
+}
+
+.payload-richtext p {
+  color: #4b5563; /* gray-600 */
+  line-height: 1.75;
+}
+
+/* El primer párrafo hace de bajada, como en el diseño original. */
+.payload-richtext > p:first-child {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  color: color-mix(in srgb, var(--color-celac-navy) 80%, transparent);
+}
+
+.payload-richtext h2,
+.payload-richtext h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-celac-navy);
+  margin-top: 2.5rem;
+}
+
+.payload-richtext h2 { font-size: 1.5rem; line-height: 2rem; }
+.payload-richtext h3 { font-size: 1.25rem; line-height: 1.75rem; }
+
+.payload-richtext strong {
+  font-weight: 600;
+  color: var(--color-celac-navy);
+}
+
+.payload-richtext a {
+  color: var(--color-celac-green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.payload-richtext a:hover {
+  color: var(--color-celac-green-hover);
+}
+
+.payload-richtext ul,
+.payload-richtext ol {
+  color: #4b5563;
+  padding-left: 1.5rem;
+  line-height: 1.75;
+}
+
+.payload-richtext ul { list-style: disc; }
+.payload-richtext ol { list-style: decimal; }
+.payload-richtext li + li { margin-top: 0.5rem; }
+
+.payload-richtext blockquote {
+  border-left: 4px solid var(--color-celac-green);
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: color-mix(in srgb, var(--color-celac-navy) 80%, transparent);
+}
